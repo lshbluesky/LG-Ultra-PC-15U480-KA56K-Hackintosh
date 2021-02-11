@@ -3,7 +3,7 @@
 ## ❄️ System Specification
 | Name | Description |
 | - | - |
-| CPU | Intel 8th Gen Kaby Lake Refresh Core i5 - 8250U GHz |
+| CPU | Intel 8th Gen Kaby Lake Refresh Core i5 - 8250U 3.40 GHz |
 | Chipsets | Intel Sunrise Point - LP |
 | Graphics | Intel UHD Graphics 620 |
 | Memory | DDR4 PC4-19200 2400 MHz 8GB |
