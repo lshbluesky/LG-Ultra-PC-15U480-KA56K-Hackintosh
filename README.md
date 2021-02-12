@@ -1,4 +1,4 @@
-# LG-Ultra-PC-15U480-KA56K-Hackintosh
+# 🍭 LG-Ultra-PC-15U480-KA56K-Hackintosh 🍬
 
 ## ❄️ System Specification
 | Name | Description |
