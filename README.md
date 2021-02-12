@@ -5,7 +5,7 @@
 | - | - |
 | CPU | Intel 8th Gen Kaby Lake Refresh Core i5 - 8250U 3.40 GHz |
 | Chipsets | Intel Sunrise Point - LP |
-| Graphics | Intel UHD Graphics 620 |
+| Graphics | Intel UHD Graphics 620 (NVidia GeForce MX150 is Disabled) |
 | Memory | DDR4 PC4-19200 2400 MHz 8GB |
 | Sound | Realtek HD Audio ALC 255 |
 | Ethernet | Realtek PCIe GBE Family Controller |
