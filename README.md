@@ -16,6 +16,18 @@
 - macOS Big Sur 11.2.1
 - OpenCore r0.6.6
 
+## BIOS Settings
+- Advanced
+  - USB BIOS Legacy Support : Enabled
+  - SATA Mode Selection : AHCI
+  - AC Mode Fan Always On : Enabled
+  - DC Mode Fan Always On : Enabled
+- Security
+  - Secure Boot Configuration
+    - Secure Boot Option : Disabled
+- Boot
+  - Legacy Mode : Disabled
+
 ## ⚠️ Issues
 - Qualcomm Atheros QCA6174a Wireless Network and Bluetooth do not work.
 
