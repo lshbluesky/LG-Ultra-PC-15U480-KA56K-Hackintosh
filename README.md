@@ -11,12 +11,13 @@
 | Ethernet | Realtek PCIe GBE Family Controller |
 | Wi-Fi / Bluetooth | Qualcomm Atheros QCA6174a Wireless Network & Bluetooth |
 | TouchPad | Synaptics SMBus TouchPad (SYN105A) |
+| BIOS | Phoenix SecureCore UEFI BIOS (Version GP219) |
 
 ## 🍃 macOS & OpenCore Versions
 - macOS Big Sur 11.2.1
 - OpenCore r0.6.6
 
-## BIOS Settings
+## 🍁 BIOS Settings
 - Advanced
   - USB BIOS Legacy Support : Enabled
   - SATA Mode Selection : AHCI
