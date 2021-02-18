@@ -40,6 +40,7 @@
 - Speed Step (Speed Shift + XCPM)
 - Realtek Wired Network
 - USB 3.0
+- USB HD Webcam
 - Night Shift
 - Battery Percentage Indication
 - Synaptics SMBus TouchPad
