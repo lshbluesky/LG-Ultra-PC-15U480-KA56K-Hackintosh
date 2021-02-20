@@ -1,6 +1,6 @@
 # 🍭 LG-Ultra-PC-15U480-KA56K-Hackintosh 🍬
 
-## ❄️ System Specification
+## 🌿 System Specification
 | Name | Description |
 | - | - |
 | CPU | Intel 8th Gen Kaby Lake Refresh Core i5 - 8250U 3.40 GHz |
@@ -16,6 +16,25 @@
 ## 🍃 macOS & OpenCore Versions
 - macOS Big Sur 11.2.1
 - OpenCore r0.6.6
+
+## ❄️ ACPI SSDT Hot Patches
+| No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
+|:-:|:-:|:-:|:-:|:-:|
+| 1 | SSDT-ALS0.aml | X | Injection | X |
+| 2 | SSDT-BATT.aml | O | Hot Patch & Override | O |
+| 3 | SSDT-DMAC.aml | X | Injection | X |
+| 4 | SSDT-EC-USBX.aml | X | Injection | X |
+| 5 | SSDT-FNBL.aml | O | Hot Patch & Override | O |
+| 6 | SSDT-HBTN_STA.aml | O | Hot Patch & Override | O |
+| 7 | SSDT-HPET.aml | X | Preset Variable Method | O |
+| 8 | SSDT-MATHLDR2_STA.aml | O | Hot Patch & Override | O |
+| 9 | SSDT-MCHC.aml | X | Injection | X |
+| 10 | SSDT-MEM2.aml | X | Injection | X |
+| 11 | SSDT-NVOF.aml | X | Injection | X |
+| 12 | SSDT-OSYS.aml | X | Assign & Injection | O |
+| 13 | SSDT-PLUG.aml | X | Injection | X |
+| 14 | SSDT-PMCR.aml | X | Injection | X |
+| 15 | SSDT-PNLF.aml | X | Injection | X |
 
 ## 🍁 BIOS Settings
 - Advanced
