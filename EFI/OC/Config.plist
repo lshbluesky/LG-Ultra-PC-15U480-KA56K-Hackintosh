@@ -617,6 +617,8 @@
 				<string>Intel UHD Graphics 620</string>
 				<key>rps-control</key>
 				<data>AQAAAA==</data>
+				<key>force-online</key>
+				<data>AQAAAA==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
