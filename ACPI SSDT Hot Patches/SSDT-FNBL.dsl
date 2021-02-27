@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-FNBL.aml, Thu Feb 11 23:42:29 2021
+ * Disassembly of SSDT-FNBL.aml, Sat Feb 27 23:03:58 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003FA (1018)
+ *     Length           0x000003F9 (1017)
  *     Revision         0x02
- *     Checksum         0x7C
+ *     Checksum         0xE2
  *     OEM ID           "shl"
  *     OEM Table ID     "BrightFn"
  *     OEM Revision     0x00000000 (0)
@@ -129,7 +129,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
                     }
                     Case (0x33)
                     {
-                        Notify (PS2K, 0x0365)
+                        Notify (PS2K, 0x0405)
                         Notify (^^^GFX0.DD1F, 0x87)
                         If ((^^MAP1.OSDP & One))
                         {
@@ -140,7 +140,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
                     }
                     Case (0x34)
                     {
-                        Notify (PS2K, 0x0366)
+                        Notify (PS2K, 0x0406)
                         Notify (^^^GFX0.DD1F, 0x86)
                         If ((^^MAP1.OSDP & One))
                         {
@@ -157,7 +157,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
             }
             Else
             {
-                Return (\_SB.PCI0.LPCB.EC0.XQ6E ())
+                \_SB.PCI0.LPCB.EC0.XQ6E ()
             }
         }
     }
