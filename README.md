@@ -61,6 +61,7 @@
 - USB 3.0
 - USB HD Webcam
 - Night Shift
+- Battery Health Management
 - Battery Percentage Indication
 - Synaptics SMBus TouchPad
 - Brightness Control
