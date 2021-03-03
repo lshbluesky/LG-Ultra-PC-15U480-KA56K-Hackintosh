@@ -35,6 +35,7 @@
 | 13 | SSDT-PLUG.aml | X | Injection | X |
 | 14 | SSDT-PMCR.aml | X | Injection | X |
 | 15 | SSDT-PNLF.aml | X | Injection | X |
+| 16 | SSDT-RP12_STA.aml | X | Injection | X |
 
 ## 🍁 BIOS Settings
 - Advanced
