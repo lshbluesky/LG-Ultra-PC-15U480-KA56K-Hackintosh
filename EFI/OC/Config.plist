@@ -96,6 +96,14 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Disable WLAN Slot</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-RP12_STA.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Disable NVidia GPU</string>
 				<key>Enabled</key>
 				<true/>
@@ -502,15 +510,6 @@
 				<string>PCI bridge</string>
 				<key>model</key>
 				<string>Sunrise Point-LP PCI Express Root Port #9</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1D,0x3)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>Internal@0,29,3/0,0</string>
-				<key>device_type</key>
-				<string>Network controller</string>
-				<key>model</key>
-				<string>QCA6174 802.11ac Wireless Network Adapter</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
 			<dict>
