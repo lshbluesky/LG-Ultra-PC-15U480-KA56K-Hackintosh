@@ -51,6 +51,7 @@
 
 ## ⚠️ Issues
 - Qualcomm Atheros QCA6174a Wireless Network and Bluetooth do not work.
+  - WLAN slot is disabled by SSDT-RP12_STA.aml
 
 ## ✅ Working
 - Intel UHD Graphics 620 QE/CI
