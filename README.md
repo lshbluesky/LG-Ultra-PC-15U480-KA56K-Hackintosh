@@ -14,7 +14,7 @@
 | BIOS | Phoenix SecureCore UEFI BIOS (Version GP219) |
 
 ## 🍃 macOS & OpenCore Versions
-- macOS Big Sur 11.2.2
+- macOS Big Sur 11.2.3
 - OpenCore r0.6.7
 
 ## ❄️ ACPI SSDT Hot Patches
