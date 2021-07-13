@@ -53,6 +53,8 @@
 ## ⚠️ Issues
 - Qualcomm Atheros QCA6174a Wireless Network and Bluetooth do not work.
   - WLAN slot is disabled by SSDT-RP12_STA.aml
+- CpuTscSync.kext does not work in macOS Monterey 12
+  - When CpuTscSync.kext is loaded, the boot stops at the "AppleACPICPU".
 
 ## ✅ Working
 - Intel UHD Graphics 620 QE/CI
