@@ -15,6 +15,7 @@
 
 ## 🍃 macOS & OpenCore Versions
 - macOS Big Sur 11.4
+- macOS Monterey 12 Beta 2 (21A5268h)
 - OpenCore r0.7.1
 
 ## ❄️ ACPI SSDT Hot Patches
