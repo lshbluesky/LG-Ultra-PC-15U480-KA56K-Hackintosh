@@ -16,7 +16,7 @@
 ## 🍃 macOS & OpenCore Versions
 - macOS Big Sur 11.4
 - macOS Monterey 12 Beta 3 (21A5284e)
-- OpenCore r0.7.1
+- OpenCore r0.7.5
 
 ## ❄️ ACPI SSDT Hot Patches
 | No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
