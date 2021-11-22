@@ -14,8 +14,7 @@
 | BIOS | Phoenix SecureCore UEFI BIOS (Version GP219) |
 
 ## 🍃 macOS & OpenCore Versions
-- macOS Big Sur 11.4
-- macOS Monterey 12 Beta 3 (21A5284e)
+- macOS Monterey 12.0.1
 - OpenCore r0.7.5
 
 ## ❄️ ACPI SSDT Hot Patches
@@ -69,7 +68,7 @@
 - Synaptics SMBus TouchPad
 - Brightness Control
 - Fn Keys (Brightness & Sound Volume Control)
-- Realtek SD Card Reader
+- Realtek RTS522A PCI Express Card Reader
 - Sleep & Wake
 - Sleep by Closing Lid
 
