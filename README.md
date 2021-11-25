@@ -58,7 +58,7 @@
 - Intel UHD Graphics 620 AGPM
 - Intel UHD Graphics 620 External HDMI Display Output
 - Realtek ALC 255
-- Speed Step (Speed Shift + XCPM)
+- Speed Step & Power Management (Speed Shift + XCPM)
 - Realtek Wired Network
 - USB 3.0
 - USB HD Webcam
