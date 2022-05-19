@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-14.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-14.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,44 +20,45 @@
  */
 DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 {
-    External (_PR_.CPPC, FieldUnitObj)    // (from opcode)
-    External (_PR_.HWPV, IntObj)    // (from opcode)
-    External (_PR_.PR00, UnknownObj)    // Warning: Unknown object
-    External (_PR_.PR00._PSS, MethodObj)    // 0 Arguments (from opcode)
-    External (_PR_.PR00._TSS, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.GGOV, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.G6AC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.G6RE, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.GFXT, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.RP01, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP01._ADR, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.RP01.PEGP.DGOF, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.RP01.PEGP.DGON, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.SGOV, MethodObj)    // 2 Arguments (from opcode)
-    External (DLHR, UnknownObj)    // (from opcode)
-    External (DLPW, UnknownObj)    // (from opcode)
-    External (EECP, UnknownObj)    // (from opcode)
-    External (GBAS, UnknownObj)    // (from opcode)
-    External (GPRW, MethodObj)    // 2 Arguments (from opcode)
-    External (HRA0, UnknownObj)    // (from opcode)
-    External (HRE0, UnknownObj)    // (from opcode)
-    External (HRG0, UnknownObj)    // (from opcode)
-    External (NVHA, UnknownObj)    // (from opcode)
-    External (OSYS, UnknownObj)    // (from opcode)
-    External (P8XH, MethodObj)    // 2 Arguments (from opcode)
-    External (PNOT, MethodObj)    // 0 Arguments (from opcode)
-    External (PWA0, UnknownObj)    // (from opcode)
-    External (PWE0, UnknownObj)    // (from opcode)
-    External (PWG0, UnknownObj)    // (from opcode)
-    External (RPA1, UnknownObj)    // (from opcode)
-    External (SGGP, UnknownObj)    // (from opcode)
-    External (SGMD, UnknownObj)    // (from opcode)
-    External (XBAS, UnknownObj)    // (from opcode)
+    External (_PR_.CPPC, FieldUnitObj)
+    External (_PR_.HWPV, IntObj)
+    External (_PR_.PR00, ProcessorObj)
+    External (_PR_.PR00._PSS, MethodObj)    // 0 Arguments
+    External (_PR_.PR00._TSS, MethodObj)    // 0 Arguments
+    External (_SB_.GGOV, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC0_.G6AC, UnknownObj)
+    External (_SB_.PCI0.LPCB.EC0_.G6RE, UnknownObj)
+    External (_SB_.PCI0.LPCB.EC0_.GFXT, UnknownObj)
+    External (_SB_.PCI0.RP01, DeviceObj)
+    External (_SB_.PCI0.RP01._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP01.PEGP.DGOF, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.RP01.PEGP.DGON, MethodObj)    // 0 Arguments
+    External (_SB_.SGOV, MethodObj)    // 2 Arguments
+    External (DLHR, UnknownObj)
+    External (DLPW, UnknownObj)
+    External (EECP, UnknownObj)
+    External (GBAS, UnknownObj)
+    External (GPRW, MethodObj)    // 2 Arguments
+    External (HRA0, UnknownObj)
+    External (HRE0, UnknownObj)
+    External (HRG0, UnknownObj)
+    External (NVHA, UnknownObj)
+    External (OSYS, UnknownObj)
+    External (P8XH, MethodObj)    // 2 Arguments
+    External (PNOT, MethodObj)    // 0 Arguments
+    External (PWA0, UnknownObj)
+    External (PWE0, UnknownObj)
+    External (PWG0, UnknownObj)
+    External (RPA1, UnknownObj)
+    External (SGGP, UnknownObj)
+    External (SGMD, UnknownObj)
+    External (XBAS, UnknownObj)
 
     Scope (\_SB.PCI0.RP01)
     {
-        OperationRegion (RPCX, SystemMemory, Add (Add (\XBAS, ShiftLeft (ShiftRight (And (\_SB.PCI0.RP01._ADR (), 0x00FF0000), 0x10), 0x0F)), ShiftLeft (And (\RPA1, 0x0F), 0x0C)), 0x1000)
+        OperationRegion (RPCX, SystemMemory, Add (Add (\XBAS, ShiftLeft (ShiftRight (And (\_SB.PCI0.RP01._ADR (), 0x00FF0000), 0x10), 
+            0x0F)), ShiftLeft (And (\RPA1, 0x0F), 0x0C)), 0x1000)
         Field (RPCX, DWordAcc, NoLock, Preserve)
         {
             PVID,   16, 
@@ -93,12 +94,12 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     {
                         If (LEqual (\_SB.PCI0.RP01.PEGP.DGCX, 0x03))
                         {
-                            Store (One, _STA)
+                            Store (One, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
                             \_SB.PCI0.RP01.PEGP.GC6O ()
                         }
                         ElseIf (LEqual (\_SB.PCI0.RP01.PEGP.DGCX, 0x04))
                         {
-                            Store (One, _STA)
+                            Store (One, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
                             \_SB.PCI0.RP01.PEGP.GC6O ()
                         }
 
@@ -109,8 +110,8 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     {
                         \_SB.PCI0.RP01.PEGP.DGON ()
                         \_SB.PCI0.RP01.PEGP.HGON ()
-                        Store (One, _STA)
-                        Store (Zero, MSD3)
+                        Store (One, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
+                        Store (Zero, MSD3) /* \_SB_.PCI0.RP01.MSD3 */
                     }
                 }
             }
@@ -123,23 +124,23 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     If (LEqual (ToInteger (GUPC), One))
                     {
                         \_SB.PCI0.RP01.PEGP.GC6I ()
-                        Store (Zero, _STA)
+                        Store (Zero, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
                     }
                     ElseIf (LEqual (ToInteger (GUPC), 0x02))
                     {
                         \_SB.PCI0.RP01.PEGP.GC6I ()
-                        Store (Zero, _STA)
+                        Store (Zero, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
                     }
                 }
                 ElseIf (LEqual (MSD3, Zero))
                 {
                     \_SB.PCI0.RP01.PEGP.DGOF ()
                     \_SB.PCI0.RP01.PEGP.HGOF ()
-                    Store (Zero, _STA)
-                    Store (0x03, MSD3)
+                    Store (Zero, _STA) /* \_SB_.PCI0.RP01.PC01._STA */
+                    Store (0x03, MSD3) /* \_SB_.PCI0.RP01.MSD3 */
                 }
 
-                Store (0x03, MSD3)
+                Store (0x03, MSD3) /* \_SB_.PCI0.RP01.MSD3 */
             }
         }
 
@@ -262,7 +263,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             Sleep (One)
             SGPO (Zero, 0x02040009, Zero, Zero)
             P8XH (Zero, 0xD4)
-            Store (Zero, LNKD)
+            Store (Zero, LNKD) /* \_SB_.PCI0.RP01.LNKD */
             P8XH (Zero, 0xD5)
             While (LLess (LNKS, 0x07))
             {
@@ -271,11 +272,11 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 
             Store (\_SB.PCI0.RP01.PEGP.SLTR, \_SB.PCI0.RP01.LREN)
             Store (One, \_SB.PCI0.RP01.CEDR)
-            Store (HVID, SVID)
-            Store (HDID, SDID)
-            Or (And (ELCT, 0x43), And (LCTL, 0xFFBC), LCTL)
+            Store (HVID, SVID) /* \_SB_.PCI0.RP01.PEGP.SVID */
+            Store (HDID, SDID) /* \_SB_.PCI0.RP01.PEGP.SDID */
+            Or (And (ELCT, 0x43), And (LCTL, 0xFFBC), LCTL) /* \_SB_.PCI0.RP01.PEGP.LCTL */
             Or (And (ELCT, 0x43), And (\_SB.PCI0.RP01.PEGA.LCT1, 0xFFBC), \_SB.PCI0.RP01.PEGA.LCT1)
-            Store (One, \_SB.PCI0.LPCB.EC0.GFXT)
+            Store (One, \_SB.PCI0.LPCB.EC0.GFXT) /* External reference */
             P8XH (Zero, 0xD6)
             Return (Zero)
         }
@@ -293,12 +294,12 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 Return (Zero)
             }
 
-            Store (LCTL, ELCT)
-            Store (SVID, HVID)
-            Store (SDID, HDID)
+            Store (LCTL, ELCT) /* \_SB_.PCI0.RP01.PEGP.ELCT */
+            Store (SVID, HVID) /* \_SB_.PCI0.RP01.PEGP.HVID */
+            Store (SDID, HDID) /* \_SB_.PCI0.RP01.PEGP.HDID */
             Store (\_SB.PCI0.RP01.LREN, \_SB.PCI0.RP01.PEGP.SLTR)
-            Store (One, LNKD)
-            Store (Zero, TCNT)
+            Store (One, LNKD) /* \_SB_.PCI0.RP01.LNKD */
+            Store (Zero, TCNT) /* \_SB_.PCI0.RP01.PEGP.TCNT */
             While (LLess (TCNT, LDLY))
             {
                 If (LEqual (LNKS, Zero))
@@ -307,7 +308,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 }
 
                 Sleep (0x10)
-                Add (TCNT, 0x10, TCNT)
+                Add (TCNT, 0x10, TCNT) /* \_SB_.PCI0.RP01.PEGP.TCNT */
             }
 
             P8XH (Zero, 0xDA)
@@ -315,7 +316,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             P8XH (Zero, 0xDB)
             SGPO (Zero, 0x0204000B, One, Zero)
             P8XH (Zero, 0xDC)
-            Store (Zero, \_SB.PCI0.LPCB.EC0.GFXT)
+            Store (Zero, \_SB.PCI0.LPCB.EC0.GFXT) /* External reference */
             P8XH (Zero, 0xDD)
             Return (Zero)
         }
@@ -328,7 +329,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 
         Name (TGPC, Buffer (0x04)
         {
-             0x00                                           
+             0x00                                             // .
         })
         Name (TDGC, Zero)
         Name (DGCX, Zero)
@@ -352,14 +353,14 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 {
                     Return (Buffer (0x04)
                     {
-                         0x1B, 0x00, 0x00, 0x00                         
+                         0x1B, 0x00, 0x00, 0x00                           // ....
                     })
                 }
                 Case (One)
                 {
                     Name (JTB1, Buffer (0x04)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                     CreateField (JTB1, Zero, One, JTEN)
                     CreateField (JTB1, One, 0x02, SREN)
@@ -372,22 +373,22 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     CreateField (JTB1, 0x0E, One, RPCL)
                     CreateField (JTB1, 0x0F, 0x02, GC6V)
                     CreateField (JTB1, 0x14, 0x0C, JTRV)
-                    Store (One, JTEN)
-                    Store (One, GC6R)
-                    Store (One, MHYB)
-                    Store (One, RPCL)
+                    Store (One, JTEN) /* \_SB_.PCI0.RP01.PEGP.OGC6.JTEN */
+                    Store (One, GC6R) /* \_SB_.PCI0.RP01.PEGP.OGC6.GC6R */
+                    Store (One, MHYB) /* \_SB_.PCI0.RP01.PEGP.OGC6.MHYB */
+                    Store (One, RPCL) /* \_SB_.PCI0.RP01.PEGP.OGC6.RPCL */
                     If (LEqual (ToInteger (RPCL), One))
                     {
-                        Store (One, TRPC)
+                        Store (One, TRPC) /* \_SB_.PCI0.RP01.PEGP.TRPC */
                     }
 
-                    Store (One, GC6V)
-                    Store (Zero, GC6V)
-                    Store (0x02, G6IF)
-                    Store (One, PTRH)
-                    Store (One, SREN)
-                    Store (0x0103, JTRV)
-                    Return (JTB1)
+                    Store (One, GC6V) /* \_SB_.PCI0.RP01.PEGP.OGC6.GC6V */
+                    Store (Zero, GC6V) /* \_SB_.PCI0.RP01.PEGP.OGC6.GC6V */
+                    Store (0x02, G6IF) /* \_SB_.PCI0.RP01.PEGP.G6IF */
+                    Store (One, PTRH) /* \_SB_.PCI0.RP01.PEGP.OGC6.PTRH */
+                    Store (One, SREN) /* \_SB_.PCI0.RP01.PEGP.OGC6.SREN */
+                    Store (0x0103, JTRV) /* \_SB_.PCI0.RP01.PEGP.OGC6.JTRV */
+                    Return (JTB1) /* \_SB_.PCI0.RP01.PEGP.OGC6.JTB1 */
                 }
                 Case (0x02)
                 {
@@ -399,79 +400,80 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     CreateField (Arg3, 0x04, One, PLPC)
                     CreateField (Arg3, 0x0E, 0x02, DFGC)
                     CreateField (Arg3, 0x10, 0x03, GPCX)
-                    Store (Arg3, TGPC)
-                    If (LOr (LNotEqual (ToInteger (GUPC), Zero), LNotEqual (ToInteger (DFGC), Zero)))
+                    Store (Arg3, TGPC) /* \_SB_.PCI0.RP01.PEGP.TGPC */
+                    If (LOr (LNotEqual (ToInteger (GUPC), Zero), LNotEqual (ToInteger (DFGC
+                        ), Zero)))
                     {
-                        Store (ToInteger (DFGC), TDGC)
-                        Store (ToInteger (GPCX), DGCX)
+                        Store (ToInteger (DFGC), TDGC) /* \_SB_.PCI0.RP01.PEGP.TDGC */
+                        Store (ToInteger (GPCX), DGCX) /* \_SB_.PCI0.RP01.PEGP.DGCX */
                     }
 
                     Name (JTB3, Buffer (0x04)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                     CreateField (JTB3, Zero, 0x03, GUPS)
                     CreateField (JTB3, 0x03, One, GPGS)
                     CreateField (JTB3, 0x07, One, PLST)
                     If (LNotEqual (ToInteger (DFGC), Zero))
                     {
-                        Store (One, GPGS)
-                        Store (One, GUPS)
-                        Return (JTB3)
+                        Store (One, GPGS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GPGS */
+                        Store (One, GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
+                        Return (JTB3) /* \_SB_.PCI0.RP01.PEGP.OGC6.JTB3 */
                     }
 
                     If (LEqual (ToInteger (GUPC), One))
                     {
                         GC6I ()
-                        Store (One, PLST)
-                        Store (Zero, GUPS)
+                        Store (One, PLST) /* \_SB_.PCI0.RP01.PEGP.OGC6.PLST */
+                        Store (Zero, GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
                     }
                     ElseIf (LEqual (ToInteger (GUPC), 0x02))
                     {
                         GC6I ()
                         If (LEqual (ToInteger (PLPC), Zero))
                         {
-                            Store (Zero, PLST)
+                            Store (Zero, PLST) /* \_SB_.PCI0.RP01.PEGP.OGC6.PLST */
                         }
 
-                        Store (Zero, GUPS)
+                        Store (Zero, GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
                     }
                     ElseIf (LEqual (ToInteger (GUPC), 0x03))
                     {
                         GC6O ()
                         If (LNotEqual (ToInteger (PLPC), Zero))
                         {
-                            Store (Zero, PLST)
+                            Store (Zero, PLST) /* \_SB_.PCI0.RP01.PEGP.OGC6.PLST */
                         }
 
-                        Store (One, GPGS)
-                        Store (Zero, GUPS)
+                        Store (One, GPGS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GPGS */
+                        Store (Zero, GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
                     }
                     ElseIf (LEqual (ToInteger (GUPC), 0x04))
                     {
                         GC6O ()
                         If (LNotEqual (ToInteger (PLPC), Zero))
                         {
-                            Store (Zero, PLST)
+                            Store (Zero, PLST) /* \_SB_.PCI0.RP01.PEGP.OGC6.PLST */
                         }
 
-                        Store (One, GPGS)
-                        Store (Zero, GUPS)
+                        Store (One, GPGS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GPGS */
+                        Store (Zero, GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
                     }
                     ElseIf (LEqual (ToInteger (GUPC), Zero))
                     {
-                        Store (GETS (), GUPS)
+                        Store (GETS (), GUPS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GUPS */
                         If (LEqual (ToInteger (GUPS), One))
                         {
-                            Store (One, GPGS)
+                            Store (One, GPGS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GPGS */
                         }
                         Else
                         {
-                            Store (Zero, GPGS)
+                            Store (Zero, GPGS) /* \_SB_.PCI0.RP01.PEGP.OGC6.GPGS */
                         }
                     }
                     ElseIf (LEqual (ToInteger (GUPC), 0x06)){}
-                    Return (JTB3)
+                    Return (JTB3) /* \_SB_.PCI0.RP01.PEGP.OGC6.JTB3 */
                 }
                 Case (0x04)
                 {
@@ -486,14 +488,14 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
         Method (GC6I, 0, Serialized)
         {
             Store ("<<< GC6I >>>", Debug)
-            Store (One, \_SB.PCI0.LPCB.EC0.G6RE)
+            Store (One, \_SB.PCI0.LPCB.EC0.G6RE) /* External reference */
             While (LNotEqual (\_SB.PCI0.LPCB.EC0.G6AC, One))
             {
                 Sleep (0x0A)
             }
 
-            Store (LREN, LTRE)
-            Store (One, LNKD)
+            Store (LREN, LTRE) /* \_SB_.PCI0.RP01.PEGP.LTRE */
+            Store (One, LNKD) /* \_SB_.PCI0.RP01.LNKD */
         }
 
         Method (GC6O, 0, Serialized)
@@ -504,7 +506,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 Sleep (One)
             }
 
-            Store (Zero, LNKD)
+            Store (Zero, LNKD) /* \_SB_.PCI0.RP01.LNKD */
             SGPO (Zero, 0x0204000A, Zero, One)
             While (LNotEqual (DGE5, Zero))
             {
@@ -517,9 +519,9 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 Stall (0x64)
             }
 
-            Store (LTRE, LREN)
-            Store (One, CEDR)
-            Store (Zero, \_SB.PCI0.LPCB.EC0.G6RE)
+            Store (LTRE, LREN) /* \_SB_.PCI0.RP01.LREN */
+            Store (One, CEDR) /* \_SB_.PCI0.RP01.CEDR */
+            Store (Zero, \_SB.PCI0.LPCB.EC0.G6RE) /* External reference */
         }
 
         Method (GETS, 0, Serialized)
@@ -628,35 +630,35 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 
         Method (MSOF, 0, NotSerialized)
         {
-            Store (0x08, PWRS)
+            Store (0x08, PWRS) /* \_SB_.PCI0.RP01.PEGP.PWRS */
             Sleep (0x10)
-            Store (NIDR, DBUF)
-            Store (CMDR, CMDS)
-            Store (0x0B, PWRS)
+            Store (NIDR, DBUF) /* \_SB_.PCI0.RP01.PEGP.DBUF */
+            Store (CMDR, CMDS) /* \_SB_.PCI0.RP01.PEGP.CMDS */
+            Store (0x0B, PWRS) /* \_SB_.PCI0.RP01.PEGP.PWRS */
             Sleep (0x10)
         }
 
         Method (MSON, 0, NotSerialized)
         {
-            Store (0x08, PWRS)
+            Store (0x08, PWRS) /* \_SB_.PCI0.RP01.PEGP.PWRS */
             Sleep (0x10)
-            Store (DBUF, NIDR)
-            Store (CMDS, CMDR)
-            Store (Zero, MLTR)
-            Store (0x0B, PWRS)
+            Store (DBUF, NIDR) /* \_SB_.PCI0.RP01.PEGP.NIDR */
+            Store (CMDS, CMDR) /* \_SB_.PCI0.RP01.PEGP.CMDR */
+            Store (Zero, MLTR) /* \_SB_.PCI0.RP01.PEGP.MLTR */
+            Store (0x0B, PWRS) /* \_SB_.PCI0.RP01.PEGP.PWRS */
             Sleep (0x10)
         }
 
         Method (DGOF, 0, NotSerialized)
         {
-            Store (NIDR, DBUF)
-            Store (CMDR, CMDS)
+            Store (NIDR, DBUF) /* \_SB_.PCI0.RP01.PEGP.DBUF */
+            Store (CMDR, CMDS) /* \_SB_.PCI0.RP01.PEGP.CMDS */
         }
 
         Method (DGON, 0, NotSerialized)
         {
-            Store (DBUF, NIDR)
-            Store (CMDS, CMDR)
+            Store (DBUF, NIDR) /* \_SB_.PCI0.RP01.PEGP.NIDR */
+            Store (CMDS, CMDR) /* \_SB_.PCI0.RP01.PEGP.CMDR */
         }
     }
 
@@ -708,7 +710,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             Store (Arg1, Local1)
             Name (VROM, Buffer (Local1)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
             If (LGreater (Local1, 0x1000))
             {
@@ -717,7 +719,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 
             If (LGreater (Arg0, RVBS))
             {
-                Return (VROM)
+                Return (VROM) /* \_SB_.PCI0.RP01.PEGP._ROM.VROM */
             }
 
             Add (Arg0, Arg1, Local2)
@@ -766,8 +768,8 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
 
             Multiply (0x8000, Local4, Local4)
             Subtract (Local0, Local4, Local0)
-            Mid (Local5, Local0, Local1, VROM)
-            Return (VROM)
+            Mid (Local5, Local0, Local1, VROM) /* \_SB_.PCI0.RP01.PEGP._ROM.VROM */
+            Return (VROM) /* \_SB_.PCI0.RP01.PEGP._ROM.VROM */
         }
     }
 
@@ -777,40 +779,40 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
         {
             Name (OPVK, Buffer (0xE2)
             {
-                /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0010 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0018 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0020 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0028 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0030 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0038 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0040 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0048 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0050 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0058 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0060 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0068 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0070 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0078 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0080 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0088 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0090 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0098 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00A0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00A8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00B0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00B8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00C0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00C8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00D0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00D8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 00E0 */  0x00, 0x00                                     
+                /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0010 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0018 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0020 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0028 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0030 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0038 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0040 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0048 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0050 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0058 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0060 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0068 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0070 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0078 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0080 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0088 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0090 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 0098 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00A0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00A8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00B0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00B8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00C0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00C8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00D0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00D8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                /* 00E0 */  0x00, 0x00                                       // ..
             })
             CreateWordField (Arg0, 0x02, USRG)
             If (LEqual (USRG, 0x564B))
             {
-                Return (OPVK)
+                Return (OPVK) /* \_SB_.PCI0.RP01.PEGP.GOBT.OPVK */
             }
 
             Return (Zero)
@@ -834,7 +836,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 {
                     Store (Buffer (0x04)
                         {
-                             0x00, 0x00, 0x00, 0x00                         
+                             0x00, 0x00, 0x00, 0x00                           // ....
                         }, Local0)
                     Divide (Zero, 0x08, Local2, Local1)
                     ShiftLeft (One, Local2, Local2)
@@ -856,32 +858,32 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     CreateField (Arg3, Zero, One, FLCH)
                     If (ToInteger (FLCH))
                     {
-                        Store (OPCE, OMPR)
+                        Store (OPCE, OMPR) /* \_SB_.PCI0.RP01.PEGP.OMPR */
                     }
 
                     Store (Buffer (0x04)
                         {
-                             0x00, 0x00, 0x00, 0x00                         
+                             0x00, 0x00, 0x00, 0x00                           // ....
                         }, Local0)
                     CreateField (Local0, Zero, One, OPEN)
                     CreateField (Local0, 0x03, 0x02, CGCS)
                     CreateField (Local0, 0x06, One, SHPC)
                     CreateField (Local0, 0x18, 0x03, DGPC)
                     CreateField (Local0, 0x1B, 0x02, HDAC)
-                    Store (One, OPEN)
-                    Store (One, SHPC)
-                    Store (0x02, HDAC)
-                    Store (One, DGPC)
+                    Store (One, OPEN) /* \_SB_.PCI0.RP01.PEGP.NVOP.OPEN */
+                    Store (One, SHPC) /* \_SB_.PCI0.RP01.PEGP.NVOP.SHPC */
+                    Store (0x02, HDAC) /* \_SB_.PCI0.RP01.PEGP.NVOP.HDAC */
+                    Store (One, DGPC) /* \_SB_.PCI0.RP01.PEGP.NVOP.DGPC */
                     If (\_SB.PCI0.RP01.PEGP._STA ())
                     {
-                        Store (0x03, CGCS)
+                        Store (0x03, CGCS) /* \_SB_.PCI0.RP01.PEGP.NVOP.CGCS */
                     }
 
                     Return (Local0)
                 }
                 Case (0x1B)
                 {
-                    Store (Zero, MLTF)
+                    Store (Zero, MLTF) /* \_SB_.PCI0.RP01.PEGP.MLTF */
                 }
                 Case (0x10)
                 {
@@ -909,11 +911,11 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             If (DGOS)
             {
                 \_SB.PCI0.RP01.PEGP._ON ()
-                Store (Zero, DGOS)
-                Store (Zero, MLTF)
+                Store (Zero, DGOS) /* \_SB_.PCI0.RP01.PEGP.DGOS */
+                Store (Zero, MLTF) /* \_SB_.PCI0.RP01.PEGP.MLTF */
             }
 
-            Store (Zero, MLTF)
+            Store (Zero, MLTF) /* \_SB_.PCI0.RP01.PEGP.MLTF */
         }
 
         Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
@@ -921,7 +923,7 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             If (LEqual (\_SB.PCI0.RP01.PEGP.OMPR, 0x03))
             {
                 \_SB.PCI0.RP01.PEGP._OFF ()
-                Store (One, DGOS)
+                Store (One, DGOS) /* \_SB_.PCI0.RP01.PEGP.DGOS */
                 Store (0x02, \_SB.PCI0.RP01.PEGP.OMPR)
             }
         }
@@ -957,7 +959,8 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             Store (Zero, Local0)
             While (LLess (Local0, Local1))
             {
-                If (LNotEqual (DerefOf (Index (Arg0, Local0)), DerefOf (Index (Arg1, Local0))))
+                If (LNotEqual (DerefOf (Index (Arg0, Local0)), DerefOf (Index (Arg1, Local0
+                    ))))
                 {
                     Return (Zero)
                 }
@@ -980,17 +983,17 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             {
                 Return (Buffer (0x04)
                 {
-                     0x02, 0x00, 0x00, 0x80                         
+                     0x02, 0x00, 0x00, 0x80                           // ....
                 })
             }
 
-            Store (Arg2, SUBF)
+            Store (Arg2, SUBF) /* \_SB_.PCI0.RP01.PEGP.SUBF */
             If (LEqual (SUBF, Zero))
             {
                 Store ("GPS fun 0", Debug)
                 Return (Buffer (0x08)
                 {
-                     0x01, 0x00, 0x08, 0x00, 0x0F, 0x04, 0x00, 0x00 
+                     0x01, 0x00, 0x08, 0x00, 0x0F, 0x04, 0x00, 0x00   // ........
                 })
             }
             ElseIf (LEqual (SUBF, 0x2A))
@@ -1011,30 +1014,30 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                     {
                         If (CPUT)
                         {
-                            Store (0x0200, RETN)
-                            Or (RETN, PSH0, RETN)
+                            Store (0x0200, RETN) /* \_SB_.PCI0.RP01.PEGP.RETN */
+                            Or (RETN, PSH0, RETN) /* \_SB_.PCI0.RP01.PEGP.RETN */
                         }
 
-                        Return (GPSP)
+                        Return (GPSP) /* \_SB_.PCI0.RP01.PEGP.GPSP */
                     }
                     Case (One)
                     {
-                        Store (0x0300, RETN)
-                        Or (RETN, PSH0, RETN)
-                        Store (0x03E8, PDTS)
-                        Return (GPSP)
+                        Store (0x0300, RETN) /* \_SB_.PCI0.RP01.PEGP.RETN */
+                        Or (RETN, PSH0, RETN) /* \_SB_.PCI0.RP01.PEGP.RETN */
+                        Store (0x03E8, PDTS) /* \_SB_.PCI0.RP01.PEGP.PDTS */
+                        Return (GPSP) /* \_SB_.PCI0.RP01.PEGP.GPSP */
                     }
                     Case (0x02)
                     {
-                        Store (0x0102, RETN)
-                        Store (0x5C, TGPU)
-                        Store (Zero, PDTS)
-                        Store (Zero, SFAN)
-                        Store (Zero, CPUE)
-                        Store (Zero, SKNT)
-                        Store (Zero, TMP1)
-                        Store (Zero, TMP2)
-                        Return (GPSP)
+                        Store (0x0102, RETN) /* \_SB_.PCI0.RP01.PEGP.RETN */
+                        Store (0x5C, TGPU) /* \_SB_.PCI0.RP01.PEGP.TGPU */
+                        Store (Zero, PDTS) /* \_SB_.PCI0.RP01.PEGP.PDTS */
+                        Store (Zero, SFAN) /* \_SB_.PCI0.RP01.PEGP.SFAN */
+                        Store (Zero, CPUE) /* \_SB_.PCI0.RP01.PEGP.CPUE */
+                        Store (Zero, SKNT) /* \_SB_.PCI0.RP01.PEGP.SKNT */
+                        Store (Zero, TMP1) /* \_SB_.PCI0.RP01.PEGP.TMP1 */
+                        Store (Zero, TMP2) /* \_SB_.PCI0.RP01.PEGP.TMP2 */
+                        Return (GPSP) /* \_SB_.PCI0.RP01.PEGP.GPSP */
                     }
 
                 }
@@ -1049,23 +1052,23 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
                 {
                     If (NRIT)
                     {
-                        Or (RET1, 0x01000000, RET1)
+                        Or (RET1, 0x01000000, RET1) /* \_SB_.PCI0.RP01.PEGP.NVGS.RET1 */
                     }
                     Else
                     {
-                        And (RET1, 0xFEFFFFFF, RET1)
+                        And (RET1, 0xFEFFFFFF, RET1) /* \_SB_.PCI0.RP01.PEGP.NVGS.RET1 */
                     }
                 }
 
-                Or (RET1, 0x40000000, RET1)
+                Or (RET1, 0x40000000, RET1) /* \_SB_.PCI0.RP01.PEGP.NVGS.RET1 */
                 Store ("== GPS: HWPV ==", Debug)
                 Store (\_PR.HWPV, Debug)
                 If (LNotEqual (\_PR.HWPV, Zero))
                 {
-                    Or (RET1, 0x00800000, RET1)
+                    Or (RET1, 0x00800000, RET1) /* \_SB_.PCI0.RP01.PEGP.NVGS.RET1 */
                 }
 
-                Return (RET1)
+                Return (RET1) /* \_SB_.PCI0.RP01.PEGP.NVGS.RET1 */
             }
             ElseIf (LEqual (SUBF, 0x21))
             {
@@ -1076,15 +1079,15 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             {
                 Store ("GPS fun 22", Debug)
                 CreateDWordField (Arg3, Zero, PCAP)
-                Store (PCAP, \_PR.CPPC)
+                Store (PCAP, \_PR.CPPC) /* External reference */
                 PNOT ()
-                Store (PCAP, PSAP)
-                Return (PCAP)
+                Store (PCAP, PSAP) /* \_SB_.PCI0.RP01.PEGP.PSAP */
+                Return (PCAP) /* \_SB_.PCI0.RP01.PEGP.NVGS.PCAP */
             }
             ElseIf (LEqual (SUBF, 0x23))
             {
                 Store ("GPS fun 23", Debug)
-                Return (PSAP)
+                Return (PSAP) /* \_SB_.PCI0.RP01.PEGP.PSAP */
             }
             ElseIf (LEqual (SUBF, 0x25))
             {
@@ -1095,8 +1098,8 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             {
                 Store ("GPS fun 26", Debug)
                 CreateDWordField (Arg3, Zero, TCAP)
-                Notify (\_PR.PR00, 0x80)
-                Return (TCAP)
+                Notify (\_PR.PR00, 0x80) // Performance Capability Change
+                Return (TCAP) /* \_SB_.PCI0.RP01.PEGP.NVGS.TCAP */
             }
             Else
             {
@@ -1120,7 +1123,8 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             Store (Zero, Local0)
             While (LLess (Local0, Local1))
             {
-                If (LNotEqual (DerefOf (Index (Arg0, Local0)), DerefOf (Index (Arg1, Local0))))
+                If (LNotEqual (DerefOf (Index (Arg0, Local0)), DerefOf (Index (Arg1, Local0
+                    ))))
                 {
                     Return (Zero)
                 }
@@ -1136,28 +1140,28 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
     {
         Name (MXM3, Buffer (0x66)
         {
-            /* 0000 */  0x4D, 0x58, 0x4D, 0x5F, 0x03, 0x00, 0x5D, 0x00,
-            /* 0008 */  0x30, 0x11, 0xB8, 0xFF, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0010 */  0x00, 0x00, 0x0A, 0xF0, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0018 */  0x60, 0xE9, 0xD0, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0020 */  0x60, 0x6A, 0xDA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0028 */  0x20, 0x2B, 0xE2, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0030 */  0x60, 0x6C, 0xEA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0038 */  0x20, 0x6A, 0xDA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0040 */  0x20, 0x6C, 0xEA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,
-            /* 0048 */  0x01, 0x90, 0x01, 0x00, 0x03, 0x00, 0x90, 0x01,
-            /* 0050 */  0x13, 0x00, 0x90, 0x01, 0xE5, 0x0D, 0x01, 0x01,
-            /* 0058 */  0x01, 0x00, 0x00, 0x00, 0xE5, 0x0D, 0x01, 0x03,
-            /* 0060 */  0x00, 0x90, 0xD8, 0x09, 0x11, 0x0A             
+            /* 0000 */  0x4D, 0x58, 0x4D, 0x5F, 0x03, 0x00, 0x5D, 0x00,  // MXM_..].
+            /* 0008 */  0x30, 0x11, 0xB8, 0xFF, 0xF9, 0x3E, 0x00, 0x00,  // 0....>..
+            /* 0010 */  0x00, 0x00, 0x0A, 0xF0, 0xF9, 0x3E, 0x00, 0x00,  // .....>..
+            /* 0018 */  0x60, 0xE9, 0xD0, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  // `....>..
+            /* 0020 */  0x60, 0x6A, 0xDA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  // `j...>..
+            /* 0028 */  0x20, 0x2B, 0xE2, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  //  +...>..
+            /* 0030 */  0x60, 0x6C, 0xEA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  // `l...>..
+            /* 0038 */  0x20, 0x6A, 0xDA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  //  j...>..
+            /* 0040 */  0x20, 0x6C, 0xEA, 0xFE, 0xF9, 0x3E, 0x00, 0x00,  //  l...>..
+            /* 0048 */  0x01, 0x90, 0x01, 0x00, 0x03, 0x00, 0x90, 0x01,  // ........
+            /* 0050 */  0x13, 0x00, 0x90, 0x01, 0xE5, 0x0D, 0x01, 0x01,  // ........
+            /* 0058 */  0x01, 0x00, 0x00, 0x00, 0xE5, 0x0D, 0x01, 0x03,  // ........
+            /* 0060 */  0x00, 0x90, 0xD8, 0x09, 0x11, 0x0A               // ......
         })
         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
         {
-            If (LEqual (Arg0, ToUUID ("cbeca351-067b-4924-9cbd-b46b00b86f34")))
+            If (LEqual (Arg0, ToUUID ("cbeca351-067b-4924-9cbd-b46b00b86f34") /* Unknown UUID */))
             {
                 Return (OGC6 (Arg0, Arg1, Arg2, Arg3))
             }
 
-            If (LEqual (Arg0, ToUUID ("a486d8f8-0bda-471b-a72b-6042a6b5bee0")))
+            If (LEqual (Arg0, ToUUID ("a486d8f8-0bda-471b-a72b-6042a6b5bee0") /* Unknown UUID */))
             {
                 Return (\_SB.PCI0.RP01.PEGP.NVOP (Arg0, Arg1, Arg2, Arg3))
             }
@@ -1167,35 +1171,32 @@ DefinitionBlock ("", "SSDT", 1, "QUANTA", "COMPUTER", 0x00001000)
             Store (Arg1, Debug)
             Store (Arg2, Debug)
             Store (Arg3, Debug)
-            If (CMPB (Arg0, ToUUID ("a3132d01-8cda-49ba-a52e-bc9d46df6b81")))
+            If (CMPB (Arg0, ToUUID ("a3132d01-8cda-49ba-a52e-bc9d46df6b81") /* Unknown UUID */))
             {
                 Return (NVGS (Arg0, Arg1, Arg2, Arg3))
             }
 
-            If (LEqual (Arg0, ToUUID ("4004a400-917d-4cf2-b89c-79b62fd55665")))
+            If (LEqual (Arg0, ToUUID ("4004a400-917d-4cf2-b89c-79b62fd55665") /* Unknown UUID */))
             {
                 Store (ToInteger (Arg2), Local0)
                 If (LEqual (Local0, Zero))
                 {
                     Return (Buffer (0x04)
                     {
-                         0x01, 0x00, 0x01, 0x01                         
+                         0x01, 0x00, 0x01, 0x01                           // ....
                     })
                 }
 
                 If (LEqual (Local0, 0x18))
                 {
-                    Return (Buffer (0x04)
-                    {
-                         0x30, 0x00, 0x00, 0x00                         
-                    })
+                    Return (Unicode ("0"))
                 }
 
                 If (LEqual (Local0, 0x10))
                 {
                     If (LEqual (Arg1, 0x0300))
                     {
-                        Return (MXM3)
+                        Return (MXM3) /* \_SB_.PCI0.RP01.PEGP.MXM3 */
                     }
                 }
 

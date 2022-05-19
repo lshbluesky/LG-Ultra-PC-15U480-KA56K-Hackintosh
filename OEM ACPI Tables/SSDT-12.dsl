@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-12.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-12.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,13 +20,13 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
 {
-    External (_SB_.PCI0.RP01.PXSX, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP09.PXSX, DeviceObj)    // (from opcode)
-    External (TBSE, IntObj)    // (from opcode)
-    External (TBTS, IntObj)    // (from opcode)
-    External (UPT1, IntObj)    // (from opcode)
-    External (UPT2, IntObj)    // (from opcode)
-    External (USME, IntObj)    // (from opcode)
+    External (_SB_.PCI0.RP01.PXSX, DeviceObj)
+    External (_SB_.PCI0.RP09.PXSX, DeviceObj)
+    External (TBSE, IntObj)
+    External (TBTS, IntObj)
+    External (UPT1, IntObj)
+    External (UPT2, IntObj)
+    External (USME, IntObj)
 
     If (LAnd (LEqual (TBTS, One), LEqual (TBSE, One)))
     {
@@ -53,18 +53,18 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                                 Buffer (0x10){}
                             })
                             CreateField (DerefOf (Index (PCKG, Zero)), Zero, 0x07, REV)
-                            Store (One, REV)
+                            Store (One, REV) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.REV_ */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x40, One, VISI)
-                            Store (Arg0, VISI)
+                            Store (Arg0, VISI) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.VISI */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x57, 0x08, GPOS)
-                            Store (Arg1, GPOS)
+                            Store (Arg1, GPOS) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.GPOS */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x4A, 0x04, SHAP)
-                            Store (One, SHAP)
+                            Store (One, SHAP) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.SHAP */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x20, 0x10, WID)
-                            Store (0x08, WID)
+                            Store (0x08, WID) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.WID_ */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x30, 0x10, HGT)
-                            Store (0x03, HGT)
-                            Return (PCKG)
+                            Store (0x03, HGT) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.HGT_ */
+                            Return (PCKG) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TPLD.PCKG */
                         }
 
                         Method (TUPC, 2, Serialized)
@@ -78,7 +78,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                             })
                             Store (Arg0, Index (PCKG, Zero))
                             Store (Arg1, Index (PCKG, One))
-                            Return (PCKG)
+                            Return (PCKG) /* \_SB_.PCI0.RP01.PXSX.TBDU.XHC_.RHUB.TUPC.PCKG */
                         }
 
                         Device (HS01)
@@ -209,18 +209,18 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                                 Buffer (0x10){}
                             })
                             CreateField (DerefOf (Index (PCKG, Zero)), Zero, 0x07, REV)
-                            Store (One, REV)
+                            Store (One, REV) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.REV_ */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x40, One, VISI)
-                            Store (Arg0, VISI)
+                            Store (Arg0, VISI) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.VISI */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x57, 0x08, GPOS)
-                            Store (Arg1, GPOS)
+                            Store (Arg1, GPOS) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.GPOS */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x4A, 0x04, SHAP)
-                            Store (One, SHAP)
+                            Store (One, SHAP) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.SHAP */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x20, 0x10, WID)
-                            Store (0x08, WID)
+                            Store (0x08, WID) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.WID_ */
                             CreateField (DerefOf (Index (PCKG, Zero)), 0x30, 0x10, HGT)
-                            Store (0x03, HGT)
-                            Return (PCKG)
+                            Store (0x03, HGT) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.HGT_ */
+                            Return (PCKG) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TPLD.PCKG */
                         }
 
                         Method (TUPC, 2, Serialized)
@@ -234,7 +234,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                             })
                             Store (Arg0, Index (PCKG, Zero))
                             Store (Arg1, Index (PCKG, One))
-                            Return (PCKG)
+                            Return (PCKG) /* \_SB_.PCI0.RP09.PXSX.TBDU.XHC_.RHUB.TUPC.PCKG */
                         }
 
                         Device (HS01)

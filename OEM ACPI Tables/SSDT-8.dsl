@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-8.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-8.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,25 +20,25 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
 {
-    External (_SB_.PCI0.HDAS, DeviceObj)    // (from opcode)
-    External (ADPM, IntObj)    // (from opcode)
-    External (AG1H, IntObj)    // (from opcode)
-    External (AG1L, IntObj)    // (from opcode)
-    External (AG2H, IntObj)    // (from opcode)
-    External (AG2L, IntObj)    // (from opcode)
-    External (AG3H, IntObj)    // (from opcode)
-    External (AG3L, IntObj)    // (from opcode)
+    External (_SB_.PCI0.HDAS, DeviceObj)
+    External (ADPM, IntObj)
+    External (AG1H, IntObj)
+    External (AG1L, IntObj)
+    External (AG2H, IntObj)
+    External (AG2L, IntObj)
+    External (AG3H, IntObj)
+    External (AG3L, IntObj)
 
     Scope (\_SB.PCI0.HDAS)
     {
         Method (PPMS, 1, Serialized)
         {
-            If (LEqual (Arg0, ToUUID ("7c708106-3aff-40fe-88be-8c999b3f7445")))
+            If (LEqual (Arg0, ToUUID ("7c708106-3aff-40fe-88be-8c999b3f7445") /* Unknown UUID */))
             {
                 Return (And (ADPM, 0x04))
             }
 
-            If (LEqual (Arg0, ToUUID ("ec774fa9-28d3-424a-90e4-69f984f1eeb7")))
+            If (LEqual (Arg0, ToUUID ("ec774fa9-28d3-424a-90e4-69f984f1eeb7") /* Unknown UUID */))
             {
                 Return (And (ADPM, 0x0100))
             }
@@ -64,8 +64,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
         Method (ACCG, 2, NotSerialized)
         {
             Name (GBUF, Buffer (0x10){})
-            Concatenate (Arg0, Arg1, GBUF)
-            Return (GBUF)
+            Concatenate (Arg0, Arg1, GBUF) /* \_SB_.PCI0.HDAS.ACCG.GBUF */
+            Return (GBUF) /* \_SB_.PCI0.HDAS.ACCG.GBUF */
         }
     }
 }

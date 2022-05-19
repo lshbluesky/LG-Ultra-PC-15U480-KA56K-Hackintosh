@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-11.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-11.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,116 +20,116 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
 {
-    External (_PR_.DTS1, UnknownObj)    // (from opcode)
-    External (_PR_.DTS2, UnknownObj)    // (from opcode)
-    External (_PR_.DTS3, UnknownObj)    // (from opcode)
-    External (_PR_.DTS4, UnknownObj)    // (from opcode)
-    External (_PR_.PDTS, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1CI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1DC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1DI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1FC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1FV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B1RC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2CI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2DI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2FC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2FV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2MH, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2ML, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.B2RC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.BMAX, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CFS2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CFSP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CMDR, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CPAP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CPUP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECAV, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.GTVR, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MCPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MCTD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MDT0, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MFSP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGTD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MMPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MMTL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MPOL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NCPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NCTD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NGPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NGTD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NMTL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.NPOL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PCAD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PDT0, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PDT1, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PDT2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PDT3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEC0, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEC1, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEC2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEC3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PECC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PECD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PECH, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PECI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEHI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PENV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEPM, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PEWL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PLAP, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PMAX, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PPDT, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PPWR, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRCS, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRFC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRS0, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRS1, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRS2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRS3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PRS4, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PWFC, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.PWRL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER1, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER4, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER5, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TER6, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TMPL, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR1, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR2, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR3, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR4, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR5, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR6, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.TSR7, UnknownObj)    // (from opcode)
-    External (_TZ_.TZ00._TMP, UnknownObj)    // (from opcode)
-    External (_TZ_.TZ01._TMP, UnknownObj)    // (from opcode)
-    External (PAMT, UnknownObj)    // (from opcode)
-    External (TSDB, UnknownObj)    // (from opcode)
+    External (_PR_.DTS1, UnknownObj)
+    External (_PR_.DTS2, UnknownObj)
+    External (_PR_.DTS3, UnknownObj)
+    External (_PR_.DTS4, UnknownObj)
+    External (_PR_.PDTS, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1CI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1DC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1DI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1FC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1FV, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B1RC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2CI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2DI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2FC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2FV, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2MH, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2ML, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.B2RC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.BMAX, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CFS2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CFSP, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CMDR, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CPAP, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CPUP, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.ECAV, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.GTVR, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MCPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MCTD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MDT0, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MFSP, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGTD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MMPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MMTL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.MPOL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NCPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NCTD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NGPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NGTD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NMTL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.NPOL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PCAD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PDT0, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PDT1, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PDT2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PDT3, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEC0, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEC1, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEC2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEC3, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PECC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PECD, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PECH, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PECI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEHI, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PENV, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEPM, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PEWL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PLAP, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PMAX, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PPDT, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PPWR, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRCS, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRFC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRS0, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRS1, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRS2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRS3, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PRS4, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PWFC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.PWRL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER1, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER3, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER4, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER5, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TER6, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TMPL, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR1, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR2, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR3, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR4, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR5, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR6, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.TSR7, UnknownObj)
+    External (_TZ_.TZ00._TMP, UnknownObj)
+    External (_TZ_.TZ01._TMP, UnknownObj)
+    External (PAMT, UnknownObj)
+    External (TSDB, UnknownObj)
 
     Scope (\_SB)
     {
         Device (PTID)
         {
-            Name (_HID, EisaId ("INT340E"))  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
+            Name (_HID, EisaId ("INT340E") /* Motherboard Resources */)  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _CID: Compatible ID
             Name (IVER, 0x00030000)
             Name (_STA, 0x0F)  // _STA: Status
             Method (TSDL, 0, NotSerialized)
             {
                 If (LEqual (TSDB, One))
                 {
-                    Return (TSD2)
+                    Return (TSD2) /* \_SB_.PTID.TSD2 */
                 }
 
-                Return (TSD1)
+                Return (TSD1) /* \_SB_.PTID.TSD1 */
             }
 
             Name (TSD1, Package (0x28)
@@ -257,10 +257,10 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
             {
                 If (LEqual (TSDB, One))
                 {
-                    Return (OSD2)
+                    Return (OSD2) /* \_SB_.PTID.OSD2 */
                 }
 
-                Return (OSD1)
+                Return (OSD1) /* \_SB_.PTID.OSD1 */
             }
 
             Name (OSD1, Package (0x15)
@@ -597,13 +597,20 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                     Store (Add (Multiply (\_PR.PDTS, 0x0A), 0x0AAC), Index (TMPX, 0x04))
                     If (LEqual (\_SB.PCI0.LPCB.H_EC.ECAV, One))
                     {
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR1)), 0x0A), 0x0AAC), Index (TMPX, 0x05))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR2)), 0x0A), 0x0AAC), Index (TMPX, 0x06))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR3)), 0x0A), 0x0AAC), Index (TMPX, 0x07))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR4)), 0x0A), 0x0AAC), Index (TMPX, 0x08))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PMAX)), 0x0A), 0x0AAC), Index (TMPX, 0x09))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PPDT)), 0x0A), 0x0AAC), Index (TMPX, 0x0A))
-                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECH)), 0x0A), 0x0AAC), Index (TMPX, 0x0B))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR1)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x05))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR2)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x06))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR3)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x07))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR4)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x08))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PMAX)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x09))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PPDT)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x0A))
+                        Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECH)), 0x0A), 0x0AAC), Index (TMPX, 
+                            0x0B))
                     }
 
                     Store (\_TZ.TZ00._TMP, Index (TMPX, 0x0D))
@@ -616,7 +623,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                         Store (XSDS (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER5)), 0x02)), Index (TMPX, 0x12))
                     }
 
-                    Return (TMPX)
+                    Return (TMPX) /* \_SB_.PTID.TSDD.TMPX */
                 }
 
                 Name (TMPV, Package (0x14)
@@ -649,14 +656,22 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                 Store (Add (Multiply (\_PR.PDTS, 0x0A), 0x0AAC), Index (TMPV, 0x04))
                 If (LEqual (\_SB.PCI0.LPCB.H_EC.ECAV, One))
                 {
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR1)), 0x0A), 0x0AAC), Index (TMPV, 0x05))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR2)), 0x0A), 0x0AAC), Index (TMPV, 0x06))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR3)), 0x0A), 0x0AAC), Index (TMPV, 0x07))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR4)), 0x0A), 0x0AAC), Index (TMPV, 0x08))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR5)), 0x0A), 0x0AAC), Index (TMPV, 0x09))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PMAX)), 0x0A), 0x0AAC), Index (TMPV, 0x0A))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PPDT)), 0x0A), 0x0AAC), Index (TMPV, 0x0B))
-                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECH)), 0x0A), 0x0AAC), Index (TMPV, 0x0C))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR1)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x05))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR2)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x06))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR3)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x07))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR4)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x08))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TSR5)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x09))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PMAX)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x0A))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PPDT)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x0B))
+                    Store (Add (Multiply (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PECH)), 0x0A), 0x0AAC), Index (TMPV, 
+                        0x0C))
                 }
 
                 Store (\_TZ.TZ00._TMP, Index (TMPV, 0x0E))
@@ -669,7 +684,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                     Store (XLAT (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER4)), 0x02)), Index (TMPV, 0x13))
                 }
 
-                Return (TMPV)
+                Return (TMPV) /* \_SB_.PTID.TSDD.TMPV */
             }
 
             Method (PSDD, 0, Serialized)
@@ -729,7 +744,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                     Store (Local0, Index (PWRV, 0x10))
                 }
 
-                Return (PWRV)
+                Return (PWRV) /* \_SB_.PTID.PSDD.PWRV */
             }
 
             Method (OSDD, 0, Serialized)
@@ -757,7 +772,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                         Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER3)), 0x02), Index (OSD2, 0x05))
                         Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER4)), 0x02), Index (OSD2, 0x06))
                         Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER5)), 0x02), Index (OSD2, 0x07))
-                        Return (OSD2)
+                        Return (OSD2) /* \_SB_.PTID.OSDD.OSD2 */
                     }
 
                     Name (OSD1, Package (0x07)
@@ -777,7 +792,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                     Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER2)), 0x02), Index (OSD1, 0x04))
                     Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER3)), 0x02), Index (OSD1, 0x05))
                     Store (ShiftLeft (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.TER4)), 0x02), Index (OSD1, 0x06))
-                    Return (OSD1)
+                    Return (OSD1) /* \_SB_.PTID.OSDD.OSD1 */
                 }
 
                 Return (Package (0x00){})
@@ -818,10 +833,10 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
             {
                 If (PAMT)
                 {
-                    Return (PADA)
+                    Return (PADA) /* \_SB_.PTID.PADA */
                 }
 
-                Return (PADD)
+                Return (PADD) /* \_SB_.PTID.PADD */
             }
 
             Method (RPMD, 0, Serialized)
@@ -851,7 +866,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                     Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.PRS4)), Index (MTMP, 0x19))
                 }
 
-                Return (MTMP)
+                Return (MTMP) /* \_SB_.PTID.RPMD.MTMP */
             }
 
             Method (WPMD, 1, NotSerialized)

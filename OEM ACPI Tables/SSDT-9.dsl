@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-9.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-9.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,20 +20,20 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
 {
-    External (_SB_.GGOV, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.I2C0.DFUD, DeviceObj)    // (from opcode)
-    External (_SB_.SGOV, MethodObj)    // 2 Arguments (from opcode)
-    External (GPBS, UnknownObj)    // (from opcode)
-    External (SDS0, UnknownObj)    // (from opcode)
-    External (SHAP, UnknownObj)    // (from opcode)
-    External (USBH, UnknownObj)    // (from opcode)
+    External (_SB_.GGOV, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.I2C0.DFUD, DeviceObj)
+    External (_SB_.SGOV, MethodObj)    // 2 Arguments
+    External (GPBS, UnknownObj)
+    External (SDS0, UnknownObj)
+    External (SHAP, UnknownObj)
+    External (USBH, UnknownObj)
 
     Scope (\)
     {
         Device (SHAD)
         {
             Name (_HID, EisaId ("INT33D0"))  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
+            Name (_CID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _CID: Compatible ID
             Method (_STA, 0, Serialized)  // _STA: Status
             {
                 If (LOr (And (SDS0, One), And (USBH, One)))
@@ -54,11 +54,11 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                 Name (OLDV, Zero)
                 Name (PGCV, Zero)
                 Name (DFUV, Zero)
-                If (LEqual (Arg0, ToUUID ("03c868d5-563f-42a8-9f57-9a18d949b7cb")))
+                If (LEqual (Arg0, ToUUID ("03c868d5-563f-42a8-9f57-9a18d949b7cb") /* Unknown UUID */))
                 {
                     If (LEqual (SHAP, One))
                     {
-                        Store (0x3A, PGCG)
+                        Store (0x3A, PGCG) /* \SHAD._DSM.PGCG */
                     }
 
                     If (LGreaterEqual (ToInteger (Arg1), One))
@@ -69,14 +69,14 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x0F                                           
+                                     0x0F                                             // .
                                 })
                             }
                             Case (One)
                             {
-                                Store (DerefOf (Index (Arg3, Zero)), PGCE)
-                                Store (DerefOf (Index (Arg3, One)), PGCD)
-                                Store (\_SB.GGOV (0x02010016), OLDV)
+                                Store (DerefOf (Index (Arg3, Zero)), PGCE) /* \SHAD._DSM.PGCE */
+                                Store (DerefOf (Index (Arg3, One)), PGCD) /* \SHAD._DSM.PGCD */
+                                Store (\_SB.GGOV (0x02010016), OLDV) /* \SHAD._DSM.OLDV */
                                 \_SB.SGOV (0x02010016, PGCE)
                                 If (LGreater (PGCD, Zero))
                                 {
@@ -91,7 +91,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                                     If (LEqual (\_SB.GGOV (0x02010014), One)){}
                                     Else
                                     {
-                                        Notify (\_SB.PCI0.I2C0.DFUD, One)
+                                        Notify (\_SB.PCI0.I2C0.DFUD, One) // Device Check
                                     }
                                 }
 
@@ -99,9 +99,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                             }
                             Case (0x02)
                             {
-                                Store (DerefOf (Index (Arg3, Zero)), DFUE)
-                                Store (DerefOf (Index (Arg3, One)), DFUD)
-                                Store (\_SB.GGOV (0x02010014), OLDV)
+                                Store (DerefOf (Index (Arg3, Zero)), DFUE) /* \SHAD._DSM.DFUE */
+                                Store (DerefOf (Index (Arg3, One)), DFUD) /* \SHAD._DSM.DFUD */
+                                Store (\_SB.GGOV (0x02010014), OLDV) /* \SHAD._DSM.OLDV */
                                 \_SB.GGOV (0x02010014)
                                 DFUE
                                 If (LGreater (DFUD, Zero))
@@ -115,8 +115,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
                             }
                             Case (0x03)
                             {
-                                Store (\_SB.GGOV (0x02010014), DFUV)
-                                Store (\_SB.GGOV (0x02010016), PGCV)
+                                Store (\_SB.GGOV (0x02010014), DFUV) /* \SHAD._DSM.DFUV */
+                                Store (\_SB.GGOV (0x02010016), PGCV) /* \SHAD._DSM.PGCV */
                                 Return (Package (0x02)
                                 {
                                     PGCV, 
@@ -134,7 +134,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00000000)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }

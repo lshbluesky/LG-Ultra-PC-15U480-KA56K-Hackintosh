@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-7.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-7.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,65 +20,65 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
 {
-    External (_SB_.PCI0.LPCB.H_EC, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.LPCB.H_EC.CCI0, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CCI1, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CCI2, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CCI3, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CMDR, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL0, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL1, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL2, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL3, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL4, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL5, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL6, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.CTL7, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECM1, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECWR, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI0, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI1, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI2, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI3, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI4, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI5, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI6, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI7, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI8, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGI9, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGIA, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGIB, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGIC, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGID, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGIE, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGIF, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO0, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO1, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO2, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO3, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO4, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO5, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO6, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO7, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO8, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGO9, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOA, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOB, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOC, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOD, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOE, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.H_EC.MGOF, IntObj)    // (from opcode)
-    External (_SB_.PCI0.XHC_.RHUB, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // 2 Arguments (from opcode)
-    External (P8XH, MethodObj)    // 2 Arguments (from opcode)
-    External (UBCB, UnknownObj)    // (from opcode)
-    External (UCRT, IntObj)    // (from opcode)
-    External (USTC, UnknownObj)    // (from opcode)
-    External (UTCM, UnknownObj)    // (from opcode)
-    External (XDCE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.LPCB.H_EC, UnknownObj)
+    External (_SB_.PCI0.LPCB.H_EC.CCI0, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CCI1, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CCI2, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CCI3, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CMDR, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL0, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL1, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL2, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL3, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL4, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL5, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL6, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.CTL7, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.ECM1, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECWR, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.MGI0, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI1, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI2, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI3, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI4, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI5, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI6, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI7, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI8, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGI9, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGIA, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGIB, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGIC, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGID, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGIE, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGIF, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO0, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO1, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO2, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO3, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO4, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO5, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO6, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO7, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO8, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGO9, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOA, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOB, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOC, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOD, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOE, IntObj)
+    External (_SB_.PCI0.LPCB.H_EC.MGOF, IntObj)
+    External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // 2 Arguments
+    External (P8XH, MethodObj)    // 2 Arguments
+    External (UBCB, UnknownObj)
+    External (UCRT, IntObj)
+    External (USTC, UnknownObj)
+    External (UTCM, UnknownObj)
+    External (XDCE, UnknownObj)
 
     Scope (\_SB)
     {
@@ -134,8 +134,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 CreateDWordField (CRS, \_SB.UBTC._Y39._BAS, CBAS)  // _BAS: Base Address
-                Store (UBCB, CBAS)
-                Return (CRS)
+                Store (UBCB, CBAS) /* \_SB_.UBTC._CRS.CBAS */
+                Return (CRS) /* \_SB_.UBTC.CRS_ */
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -203,7 +203,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
 
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                If (LEqual (Arg0, ToUUID ("6f8398c2-7ca4-11e4-ad36-631042b5008f")))
+                If (LEqual (Arg0, ToUUID ("6f8398c2-7ca4-11e4-ad36-631042b5008f") /* Unknown UUID */))
                 {
                     Switch (ToInteger (Arg2))
                     {
@@ -211,7 +211,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                         {
                             Return (Buffer (One)
                             {
-                                 0x0F                                           
+                                 0x0F                                             // .
                             })
                         }
                         Case (One)
@@ -261,30 +261,30 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
                         }
                         Case (0x02)
                         {
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI0)), MGI0)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI1)), MGI1)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI2)), MGI2)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI3)), MGI3)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI4)), MGI4)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI5)), MGI5)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI6)), MGI6)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI7)), MGI7)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI8)), MGI8)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI9)), MGI9)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIA)), MGIA)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIB)), MGIB)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIC)), MGIC)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGID)), MGID)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIE)), MGIE)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIF)), MGIF)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI0)), CCI0)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI1)), CCI1)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI2)), CCI2)
-                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI3)), CCI3)
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI0)), MGI0) /* \_SB_.UBTC.MGI0 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI1)), MGI1) /* \_SB_.UBTC.MGI1 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI2)), MGI2) /* \_SB_.UBTC.MGI2 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI3)), MGI3) /* \_SB_.UBTC.MGI3 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI4)), MGI4) /* \_SB_.UBTC.MGI4 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI5)), MGI5) /* \_SB_.UBTC.MGI5 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI6)), MGI6) /* \_SB_.UBTC.MGI6 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI7)), MGI7) /* \_SB_.UBTC.MGI7 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI8)), MGI8) /* \_SB_.UBTC.MGI8 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGI9)), MGI9) /* \_SB_.UBTC.MGI9 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIA)), MGIA) /* \_SB_.UBTC.MGIA */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIB)), MGIB) /* \_SB_.UBTC.MGIB */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIC)), MGIC) /* \_SB_.UBTC.MGIC */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGID)), MGID) /* \_SB_.UBTC.MGID */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIE)), MGIE) /* \_SB_.UBTC.MGIE */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.MGIF)), MGIF) /* \_SB_.UBTC.MGIF */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI0)), CCI0) /* \_SB_.UBTC.CCI0 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI1)), CCI1) /* \_SB_.UBTC.CCI1 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI2)), CCI2) /* \_SB_.UBTC.CCI2 */
+                            Store (\_SB.PCI0.LPCB.H_EC.ECRD (RefOf (\_SB.PCI0.LPCB.H_EC.CCI3)), CCI3) /* \_SB_.UBTC.CCI3 */
                         }
                         Case (0x03)
                         {
-                            Return (XDCE)
+                            Return (XDCE) /* External reference */
                         }
 
                     }
@@ -292,7 +292,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00001000)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }

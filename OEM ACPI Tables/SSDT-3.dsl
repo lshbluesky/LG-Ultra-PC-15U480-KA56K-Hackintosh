@@ -1,17 +1,17 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-3.aml, Thu Feb 11 23:36:05 2021
+ * Disassembly of SSDT-3.aml, Thu May 19 16:03:04 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00003811 (14353)
+ *     Length           0x00003813 (14355)
  *     Revision         0x02
- *     Checksum         0xE3
+ *     Checksum         0xA0
  *     OEM ID           "QUANTA"
  *     OEM Table ID     "COMPUTER"
  *     OEM Revision     0x00003000 (12288)
@@ -20,24 +20,24 @@
  */
 DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 {
-    External (_SB_.CMSR, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.CMSW, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.CUNM, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.HDOS, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.HNOT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.CUDD, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SW2S, UnknownObj)    // (from opcode)
-    External (CPSC, UnknownObj)    // (from opcode)
-    External (DSEN, UnknownObj)    // (from opcode)
-    External (ECON, IntObj)    // (from opcode)
-    External (GUAM, MethodObj)    // 1 Arguments (from opcode)
-    External (OSYS, IntObj)    // (from opcode)
-    External (PNHM, IntObj)    // (from opcode)
-    External (S0ID, UnknownObj)    // (from opcode)
+    External (_SB_.CMSR, MethodObj)    // 1 Arguments
+    External (_SB_.CMSW, MethodObj)    // 2 Arguments
+    External (_SB_.CUNM, UnknownObj)
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.GFX0, DeviceObj)
+    External (_SB_.PCI0.GFX0.HDOS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.GFX0.HNOT, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.CUDD, UnknownObj)
+    External (_SB_.PCI0.LPCB.EC0_.SW2S, UnknownObj)
+    External (CPSC, UnknownObj)
+    External (DSEN, UnknownObj)
+    External (ECON, IntObj)
+    External (GUAM, MethodObj)    // 1 Arguments
+    External (OSYS, IntObj)
+    External (PNHM, IntObj)
+    External (S0ID, UnknownObj)
 
-    OperationRegion (SANV, SystemMemory, 0x9BEC6418, 0x01F7)
+    OperationRegion (SANV, SystemMemory, 0x9BEC6418, 0x01FE)
     Field (SANV, AnyAcc, Lock, Preserve)
     {
         ASLB,   32, 
@@ -154,20 +154,21 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
         CKM1,   32, 
         CKM2,   32, 
         Offset (0x1F4), 
-        Offset (0x1F7)
+        Offset (0x1F7), 
+        Offset (0x1FE)
     }
 
     Scope (\_SB.PCI0.GFX0)
     {
         Method (_REG, 2, NotSerialized)  // _REG: Region Availability
         {
-            Store (One, LIDS)
-            Store (0x03, CLID)
+            Store (One, LIDS) /* \LIDS */
+            Store (0x03, CLID) /* \_SB_.PCI0.GFX0.CLID */
         }
 
         Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
         {
-            Store (And (Arg0, 0x07), DSEN)
+            Store (And (Arg0, 0x07), DSEN) /* External reference */
             If (LEqual (And (Arg0, 0x03), Zero))
             {
                 If (CondRefOf (HDOS))
@@ -181,86 +182,86 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
         {
             If (LEqual (IMTP, One))
             {
-                Store (One, NDID)
+                Store (One, NDID) /* \NDID */
             }
             Else
             {
-                Store (Zero, NDID)
+                Store (Zero, NDID) /* \NDID */
             }
 
             If (LNotEqual (DIDL, Zero))
             {
-                Store (SDDL (DIDL), DID1)
+                Store (SDDL (DIDL), DID1) /* \DID1 */
             }
 
             If (LNotEqual (DDL2, Zero))
             {
-                Store (SDDL (DDL2), DID2)
+                Store (SDDL (DDL2), DID2) /* \DID2 */
             }
 
             If (LNotEqual (DDL3, Zero))
             {
-                Store (SDDL (DDL3), DID3)
+                Store (SDDL (DDL3), DID3) /* \DID3 */
             }
 
             If (LNotEqual (DDL4, Zero))
             {
-                Store (SDDL (DDL4), DID4)
+                Store (SDDL (DDL4), DID4) /* \DID4 */
             }
 
             If (LNotEqual (DDL5, Zero))
             {
-                Store (SDDL (DDL5), DID5)
+                Store (SDDL (DDL5), DID5) /* \DID5 */
             }
 
             If (LNotEqual (DDL6, Zero))
             {
-                Store (SDDL (DDL6), DID6)
+                Store (SDDL (DDL6), DID6) /* \DID6 */
             }
 
             If (LNotEqual (DDL7, Zero))
             {
-                Store (SDDL (DDL7), DID7)
+                Store (SDDL (DDL7), DID7) /* \DID7 */
             }
 
             If (LNotEqual (DDL8, Zero))
             {
-                Store (SDDL (DDL8), DID8)
+                Store (SDDL (DDL8), DID8) /* \DID8 */
             }
 
             If (LNotEqual (DDL9, Zero))
             {
-                Store (SDDL (DDL9), DID9)
+                Store (SDDL (DDL9), DID9) /* \DID9 */
             }
 
             If (LNotEqual (DD10, Zero))
             {
-                Store (SDDL (DD10), DIDA)
+                Store (SDDL (DD10), DIDA) /* \DIDA */
             }
 
             If (LNotEqual (DD11, Zero))
             {
-                Store (SDDL (DD11), DIDB)
+                Store (SDDL (DD11), DIDB) /* \DIDB */
             }
 
             If (LNotEqual (DD12, Zero))
             {
-                Store (SDDL (DD12), DIDC)
+                Store (SDDL (DD12), DIDC) /* \DIDC */
             }
 
             If (LNotEqual (DD13, Zero))
             {
-                Store (SDDL (DD13), DIDD)
+                Store (SDDL (DD13), DIDD) /* \DIDD */
             }
 
             If (LNotEqual (DD14, Zero))
             {
-                Store (SDDL (DD14), DIDE)
+                Store (SDDL (DD14), DIDE) /* \DIDE */
             }
 
             If (LNotEqual (DD15, Zero))
             {
-                Store (SDDL (DD15), DIDF)
+                Store (SDDL (DD15), DIDF) /* \DIDF */
             }
 
             If (LEqual (NDID, One))
@@ -278,7 +279,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID1), Index (TMP1, Zero))
                 }
 
-                Return (TMP1)
+                Return (TMP1) /* \_SB_.PCI0.GFX0._DOD.TMP1 */
             }
 
             If (LEqual (NDID, 0x02))
@@ -298,7 +299,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID2), Index (TMP2, One))
                 }
 
-                Return (TMP2)
+                Return (TMP2) /* \_SB_.PCI0.GFX0._DOD.TMP2 */
             }
 
             If (LEqual (NDID, 0x03))
@@ -320,7 +321,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID3), Index (TMP3, 0x02))
                 }
 
-                Return (TMP3)
+                Return (TMP3) /* \_SB_.PCI0.GFX0._DOD.TMP3 */
             }
 
             If (LEqual (NDID, 0x04))
@@ -344,7 +345,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID4), Index (TMP4, 0x03))
                 }
 
-                Return (TMP4)
+                Return (TMP4) /* \_SB_.PCI0.GFX0._DOD.TMP4 */
             }
 
             If (LEqual (NDID, 0x05))
@@ -370,7 +371,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID5), Index (TMP5, 0x04))
                 }
 
-                Return (TMP5)
+                Return (TMP5) /* \_SB_.PCI0.GFX0._DOD.TMP5 */
             }
 
             If (LEqual (NDID, 0x06))
@@ -398,7 +399,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID6), Index (TMP6, 0x05))
                 }
 
-                Return (TMP6)
+                Return (TMP6) /* \_SB_.PCI0.GFX0._DOD.TMP6 */
             }
 
             If (LEqual (NDID, 0x07))
@@ -428,7 +429,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID7), Index (TMP7, 0x06))
                 }
 
-                Return (TMP7)
+                Return (TMP7) /* \_SB_.PCI0.GFX0._DOD.TMP7 */
             }
 
             If (LEqual (NDID, 0x08))
@@ -460,7 +461,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID8), Index (TMP8, 0x07))
                 }
 
-                Return (TMP8)
+                Return (TMP8) /* \_SB_.PCI0.GFX0._DOD.TMP8 */
             }
 
             If (LEqual (NDID, 0x09))
@@ -494,7 +495,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DID9), Index (TMP9, 0x08))
                 }
 
-                Return (TMP9)
+                Return (TMP9) /* \_SB_.PCI0.GFX0._DOD.TMP9 */
             }
 
             If (LEqual (NDID, 0x0A))
@@ -530,7 +531,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDA), Index (TMPA, 0x09))
                 }
 
-                Return (TMPA)
+                Return (TMPA) /* \_SB_.PCI0.GFX0._DOD.TMPA */
             }
 
             If (LEqual (NDID, 0x0B))
@@ -568,7 +569,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDB), Index (TMPB, 0x0A))
                 }
 
-                Return (TMPB)
+                Return (TMPB) /* \_SB_.PCI0.GFX0._DOD.TMPB */
             }
 
             If (LEqual (NDID, 0x0C))
@@ -608,7 +609,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDC), Index (TMPC, 0x0B))
                 }
 
-                Return (TMPC)
+                Return (TMPC) /* \_SB_.PCI0.GFX0._DOD.TMPC */
             }
 
             If (LEqual (NDID, 0x0D))
@@ -650,7 +651,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDD), Index (TMPD, 0x0C))
                 }
 
-                Return (TMPD)
+                Return (TMPD) /* \_SB_.PCI0.GFX0._DOD.TMPD */
             }
 
             If (LEqual (NDID, 0x0E))
@@ -694,7 +695,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDE), Index (TMPE, 0x0D))
                 }
 
-                Return (TMPE)
+                Return (TMPE) /* \_SB_.PCI0.GFX0._DOD.TMPE */
             }
 
             If (LEqual (NDID, 0x0F))
@@ -740,7 +741,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (Or (0x00010000, DIDF), Index (TMPF, 0x0E))
                 }
 
-                Return (TMPF)
+                Return (TMPF) /* \_SB_.PCI0.GFX0._DOD.TMPF */
             }
 
             If (LEqual (NDID, 0x10))
@@ -780,7 +781,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                 Store (Or (0x00010000, DIDE), Index (TMPG, 0x0D))
                 Store (Or (0x00010000, DIDF), Index (TMPG, 0x0E))
                 Store (0x0002CA00, Index (TMPG, 0x0F))
-                Return (TMPG)
+                Return (TMPG) /* \_SB_.PCI0.GFX0._DOD.TMPG */
             }
 
             Return (Package (0x01)
@@ -795,9 +796,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID1), 0x0400))
                 {
-                    Store (One, EDPV)
-                    Store (NXD1, NXDX)
-                    Store (DID1, DIDX)
+                    Store (One, EDPV) /* \EDPV */
+                    Store (NXD1, NXDX) /* \NXDX */
+                    Store (DID1, DIDX) /* \DIDX */
                     Return (One)
                 }
 
@@ -820,7 +821,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD1)
+                    Return (NXD1) /* \NXD1 */
                 }
 
                 Return (NDDS (DID1))
@@ -838,9 +839,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID2), 0x0400))
                 {
-                    Store (0x02, EDPV)
-                    Store (NXD2, NXDX)
-                    Store (DID2, DIDX)
+                    Store (0x02, EDPV) /* \EDPV */
+                    Store (NXD2, NXDX) /* \NXDX */
+                    Store (DID2, DIDX) /* \DIDX */
                     Return (0x02)
                 }
 
@@ -868,7 +869,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD2)
+                    Return (NXD2) /* \NXD2 */
                 }
 
                 Return (NDDS (DID2))
@@ -886,9 +887,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID3), 0x0400))
                 {
-                    Store (0x03, EDPV)
-                    Store (NXD3, NXDX)
-                    Store (DID3, DIDX)
+                    Store (0x03, EDPV) /* \EDPV */
+                    Store (NXD3, NXDX) /* \NXDX */
+                    Store (DID3, DIDX) /* \DIDX */
                     Return (0x03)
                 }
 
@@ -918,7 +919,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD3)
+                    Return (NXD3) /* \NXD3 */
                 }
 
                 Return (NDDS (DID3))
@@ -936,9 +937,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID4), 0x0400))
                 {
-                    Store (0x04, EDPV)
-                    Store (NXD4, NXDX)
-                    Store (DID4, DIDX)
+                    Store (0x04, EDPV) /* \EDPV */
+                    Store (NXD4, NXDX) /* \NXDX */
+                    Store (DID4, DIDX) /* \DIDX */
                     Return (0x04)
                 }
 
@@ -968,7 +969,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD4)
+                    Return (NXD4) /* \NXD4 */
                 }
 
                 Return (NDDS (DID4))
@@ -986,9 +987,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID5), 0x0400))
                 {
-                    Store (0x05, EDPV)
-                    Store (NXD5, NXDX)
-                    Store (DID5, DIDX)
+                    Store (0x05, EDPV) /* \EDPV */
+                    Store (NXD5, NXDX) /* \NXDX */
+                    Store (DID5, DIDX) /* \DIDX */
                     Return (0x05)
                 }
 
@@ -1018,7 +1019,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD5)
+                    Return (NXD5) /* \NXD5 */
                 }
 
                 Return (NDDS (DID5))
@@ -1036,9 +1037,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID6), 0x0400))
                 {
-                    Store (0x06, EDPV)
-                    Store (NXD6, NXDX)
-                    Store (DID6, DIDX)
+                    Store (0x06, EDPV) /* \EDPV */
+                    Store (NXD6, NXDX) /* \NXDX */
+                    Store (DID6, DIDX) /* \DIDX */
                     Return (0x06)
                 }
 
@@ -1068,7 +1069,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD6)
+                    Return (NXD6) /* \NXD6 */
                 }
 
                 Return (NDDS (DID6))
@@ -1086,9 +1087,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID7), 0x0400))
                 {
-                    Store (0x07, EDPV)
-                    Store (NXD7, NXDX)
-                    Store (DID7, DIDX)
+                    Store (0x07, EDPV) /* \EDPV */
+                    Store (NXD7, NXDX) /* \NXDX */
+                    Store (DID7, DIDX) /* \DIDX */
                     Return (0x07)
                 }
 
@@ -1118,7 +1119,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD7)
+                    Return (NXD7) /* \NXD7 */
                 }
 
                 Return (NDDS (DID7))
@@ -1136,9 +1137,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID8), 0x0400))
                 {
-                    Store (0x08, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DID8, DIDX)
+                    Store (0x08, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DID8, DIDX) /* \DIDX */
                     Return (0x08)
                 }
 
@@ -1168,7 +1169,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DID8))
@@ -1186,9 +1187,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DID9), 0x0400))
                 {
-                    Store (0x09, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DID9, DIDX)
+                    Store (0x09, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DID9, DIDX) /* \DIDX */
                     Return (0x09)
                 }
 
@@ -1218,7 +1219,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DID9))
@@ -1236,9 +1237,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDA), 0x0400))
                 {
-                    Store (0x0A, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDA, DIDX)
+                    Store (0x0A, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDA, DIDX) /* \DIDX */
                     Return (0x0A)
                 }
 
@@ -1268,7 +1269,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDA))
@@ -1286,9 +1287,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDB), 0x0400))
                 {
-                    Store (0x0B, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDB, DIDX)
+                    Store (0x0B, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDB, DIDX) /* \DIDX */
                     Return (0x0B)
                 }
 
@@ -1318,7 +1319,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDB))
@@ -1336,9 +1337,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDC), 0x0400))
                 {
-                    Store (0x0C, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDC, DIDX)
+                    Store (0x0C, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDC, DIDX) /* \DIDX */
                     Return (0x0C)
                 }
 
@@ -1368,7 +1369,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDC))
@@ -1386,9 +1387,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDD), 0x0400))
                 {
-                    Store (0x0D, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDD, DIDX)
+                    Store (0x0D, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDD, DIDX) /* \DIDX */
                     Return (0x0D)
                 }
 
@@ -1418,7 +1419,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDD))
@@ -1436,9 +1437,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDE), 0x0400))
                 {
-                    Store (0x0E, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDE, DIDX)
+                    Store (0x0E, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDE, DIDX) /* \DIDX */
                     Return (0x0E)
                 }
 
@@ -1468,7 +1469,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDE))
@@ -1486,9 +1487,9 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (And (0x0F00, DIDF), 0x0400))
                 {
-                    Store (0x0F, EDPV)
-                    Store (NXD8, NXDX)
-                    Store (DIDF, DIDX)
+                    Store (0x0F, EDPV) /* \EDPV */
+                    Store (NXD8, NXDX) /* \NXDX */
+                    Store (DIDF, DIDX) /* \DIDX */
                     Return (0x0F)
                 }
 
@@ -1518,7 +1519,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXD8)
+                    Return (NXD8) /* \NXD8 */
                 }
 
                 Return (NDDS (DIDF))
@@ -1560,7 +1561,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LAnd (LEqual (And (SGMD, 0x7F), One), CondRefOf (SNXD)))
                 {
-                    Return (NXDX)
+                    Return (NXDX) /* \NXDX */
                 }
 
                 Return (NDDS (DIDX))
@@ -1858,34 +1859,34 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LOr (LEqual (OSYS, 0x03E8), LEqual (OSYS, 0x03E9)))
                 {
-                    Return (SUBR)
+                    Return (SUBR) /* \_SB_.PCI0.GFX0.DD1F.SUBR */
                 }
                 ElseIf (LLess (OSYS, 0x07DC))
                 {
                     If (LEqual (\_SB.PCI0.LPCB.EC0.CUDD, One))
                     {
-                        Return (GGBR)
+                        Return (GGBR) /* \_SB_.PCI0.GFX0.DD1F.GGBR */
                     }
 
-                    Store (DerefOf (Index (GC1L, 0x02)), PLD0)
-                    Store (DerefOf (Index (GC1L, 0x03)), PLD1)
-                    Store (DerefOf (Index (GC1L, 0x04)), PLD2)
-                    Store (DerefOf (Index (GC1L, 0x05)), PLD3)
-                    Store (DerefOf (Index (GC1L, 0x06)), PLD4)
-                    Store (DerefOf (Index (GC1L, 0x07)), PLD5)
-                    Store (DerefOf (Index (GC1L, 0x08)), PLD6)
-                    Store (DerefOf (Index (GC1L, 0x09)), PLD7)
-                    Store (DerefOf (Index (GC1L, 0x0A)), PLD8)
-                    Return (GC1L)
+                    Store (DerefOf (Index (GC1L, 0x02)), PLD0) /* \_SB_.PCI0.GFX0.DD1F.PLD0 */
+                    Store (DerefOf (Index (GC1L, 0x03)), PLD1) /* \_SB_.PCI0.GFX0.DD1F.PLD1 */
+                    Store (DerefOf (Index (GC1L, 0x04)), PLD2) /* \_SB_.PCI0.GFX0.DD1F.PLD2 */
+                    Store (DerefOf (Index (GC1L, 0x05)), PLD3) /* \_SB_.PCI0.GFX0.DD1F.PLD3 */
+                    Store (DerefOf (Index (GC1L, 0x06)), PLD4) /* \_SB_.PCI0.GFX0.DD1F.PLD4 */
+                    Store (DerefOf (Index (GC1L, 0x07)), PLD5) /* \_SB_.PCI0.GFX0.DD1F.PLD5 */
+                    Store (DerefOf (Index (GC1L, 0x08)), PLD6) /* \_SB_.PCI0.GFX0.DD1F.PLD6 */
+                    Store (DerefOf (Index (GC1L, 0x09)), PLD7) /* \_SB_.PCI0.GFX0.DD1F.PLD7 */
+                    Store (DerefOf (Index (GC1L, 0x0A)), PLD8) /* \_SB_.PCI0.GFX0.DD1F.PLD8 */
+                    Return (GC1L) /* \_SB_.PCI0.GFX0.DD1F.GC1L */
                 }
                 Else
                 {
                     If (LEqual (\_SB.PCI0.LPCB.EC0.CUDD, One))
                     {
-                        Return (W8LG)
+                        Return (W8LG) /* \_SB_.PCI0.GFX0.DD1F.W8LG */
                     }
 
-                    Return (W8BR)
+                    Return (W8BR) /* \_SB_.PCI0.GFX0.DD1F.W8BR */
                 }
             }
 
@@ -1911,7 +1912,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                 If (LAnd (LGreaterEqual (Arg0, Zero), LLessEqual (Arg0, 0x64)))
                 {
                     \_SB.PCI0.GFX0.AINT (One, Arg0)
-                    Store (Arg0, BRTL)
+                    Store (Arg0, BRTL) /* \BRTL */
                 }
             }
 
@@ -1933,7 +1934,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     Store (CMSR (0x63), Local0)
                 }
 
-                Return (BRTL)
+                Return (BRTL) /* \BRTL */
             }
 
             Method (BRUP, 0, NotSerialized)
@@ -2383,7 +2384,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
         {
             If (LEqual (And (Arg0, 0xC0000000), 0xC0000000))
             {
-                Store (NSTE, CSTE)
+                Store (NSTE, CSTE) /* \CSTE */
             }
         }
 
@@ -2602,115 +2603,116 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             {
                 If (LEqual (GESF, Zero))
                 {
-                    Store (0x0659, PARM)
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (0x0659, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, One))
                 {
-                    Store (0x00300482, PARM)
+                    Store (0x00300482, PARM) /* \_SB_.PCI0.GFX0.PARM */
                     If (LEqual (S0ID, One))
                     {
-                        Or (PARM, 0x0100, PARM)
+                        Or (PARM, 0x0100, PARM) /* \_SB_.PCI0.GFX0.PARM */
                     }
 
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x04))
                 {
-                    And (PARM, 0xEFFF0000, PARM)
-                    And (PARM, ShiftLeft (DerefOf (Index (DBTB, IBTT)), 0x10), PARM)
-                    Or (IBTT, PARM, PARM)
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    And (PARM, 0xEFFF0000, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    And (PARM, ShiftLeft (DerefOf (Index (DBTB, IBTT)), 0x10), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (IBTT, PARM, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x05))
                 {
-                    Store (IPSC, PARM)
-                    Or (PARM, ShiftLeft (IPAT, 0x08), PARM)
-                    Add (PARM, 0x0100, PARM)
-                    Or (PARM, ShiftLeft (LIDS, 0x10), PARM)
-                    Add (PARM, 0x00010000, PARM)
-                    Or (PARM, ShiftLeft (IBIA, 0x14), PARM)
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (IPSC, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, ShiftLeft (IPAT, 0x08), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Add (PARM, 0x0100, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, ShiftLeft (LIDS, 0x10), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Add (PARM, 0x00010000, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, ShiftLeft (IBIA, 0x14), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x07))
                 {
-                    Store (GIVD, PARM)
-                    XOr (PARM, One, PARM)
-                    Or (PARM, ShiftLeft (GMFN, One), PARM)
-                    Or (PARM, 0x1800, PARM)
-                    Or (PARM, ShiftLeft (IDMS, 0x11), PARM)
-                    Or (ShiftLeft (DerefOf (Index (DerefOf (Index (CDCT, HVCO)), CDVL)), 0x15), PARM, PARM)
-                    Store (One, GESF)
-                    Return (SUCC)
+                    Store (GIVD, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    XOr (PARM, One, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, ShiftLeft (GMFN, One), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, 0x1800, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (PARM, ShiftLeft (IDMS, 0x11), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Or (ShiftLeft (DerefOf (Index (DerefOf (Index (CDCT, HVCO)), CDVL)), 0x15
+                        ), PARM, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (One, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x0A))
                 {
-                    Store (Zero, PARM)
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
                     If (ISSC)
                     {
-                        Or (PARM, 0x03, PARM)
+                        Or (PARM, 0x03, PARM) /* \_SB_.PCI0.GFX0.PARM */
                     }
 
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x0B))
                 {
-                    Store (KSV0, PARM)
-                    Store (KSV1, GESF)
-                    Return (SUCC)
+                    Store (KSV0, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (KSV1, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
-                Store (Zero, GESF)
-                Return (CRIT)
+                Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                Return (CRIT) /* \_SB_.PCI0.GFX0.CRIT */
             }
 
             Method (SBCB, 0, Serialized)
             {
                 If (LEqual (GESF, Zero))
                 {
-                    Store (Zero, PARM)
-                    Store (0x000F87DD, PARM)
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (0x000F87DD, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, One))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x03))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x04))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x05))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x07))
@@ -2733,76 +2735,76 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                         Store (CLID, Local0)
                         If (And (0x80000000, Local0))
                         {
-                            And (CLID, 0x0F, CLID)
+                            And (CLID, 0x0F, CLID) /* \_SB_.PCI0.GFX0.CLID */
                             GLID (CLID)
                         }
                     }
 
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x08))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x09))
                 {
-                    And (PARM, 0xFF, IBTT)
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    And (PARM, 0xFF, IBTT) /* \IBTT */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x0A))
                 {
-                    And (PARM, 0xFF, IPSC)
+                    And (PARM, 0xFF, IPSC) /* \IPSC */
                     If (And (ShiftRight (PARM, 0x08), 0xFF))
                     {
-                        And (ShiftRight (PARM, 0x08), 0xFF, IPAT)
+                        And (ShiftRight (PARM, 0x08), 0xFF, IPAT) /* \IPAT */
                         Decrement (IPAT)
                     }
 
-                    And (ShiftRight (PARM, 0x14), 0x07, IBIA)
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    And (ShiftRight (PARM, 0x14), 0x07, IBIA) /* \IBIA */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x0B))
                 {
-                    And (ShiftRight (PARM, One), One, IF1E)
+                    And (ShiftRight (PARM, One), One, IF1E) /* \IF1E */
                     If (And (PARM, 0x0001E000))
                     {
-                        And (ShiftRight (PARM, 0x0D), 0x0F, IDMS)
+                        And (ShiftRight (PARM, 0x0D), 0x0F, IDMS) /* \IDMS */
                     }
                     Else
                     {
-                        And (ShiftRight (PARM, 0x11), 0x0F, IDMS)
+                        And (ShiftRight (PARM, 0x11), 0x0F, IDMS) /* \IDMS */
                     }
 
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x10))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x11))
                 {
-                    Store (ShiftLeft (LIDS, 0x08), PARM)
-                    Add (PARM, 0x0100, PARM)
-                    Store (Zero, GESF)
-                    Return (SUCC)
+                    Store (ShiftLeft (LIDS, 0x08), PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Add (PARM, 0x0100, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x12))
@@ -2811,57 +2813,57 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     {
                         If (LEqual (ShiftRight (PARM, One), One))
                         {
-                            Store (One, ISSC)
+                            Store (One, ISSC) /* \ISSC */
                         }
                         Else
                         {
-                            Store (Zero, GESF)
-                            Return (CRIT)
+                            Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                            Return (CRIT) /* \_SB_.PCI0.GFX0.CRIT */
                         }
                     }
                     Else
                     {
-                        Store (Zero, ISSC)
+                        Store (Zero, ISSC) /* \ISSC */
                     }
 
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x13))
                 {
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
                 If (LEqual (GESF, 0x14))
                 {
-                    And (PARM, 0x0F, PAVP)
-                    Store (Zero, GESF)
-                    Store (Zero, PARM)
-                    Return (SUCC)
+                    And (PARM, 0x0F, PAVP) /* \PAVP */
+                    Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                    Store (Zero, PARM) /* \_SB_.PCI0.GFX0.PARM */
+                    Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
                 }
 
-                Store (Zero, GESF)
-                Return (SUCC)
+                Store (Zero, GESF) /* \_SB_.PCI0.GFX0.GESF */
+                Return (SUCC) /* \_SB_.PCI0.GFX0.SUCC */
             }
 
             If (LEqual (GEFC, 0x04))
             {
-                Store (GBDA (), GXFC)
+                Store (GBDA (), GXFC) /* \_SB_.PCI0.GFX0.GXFC */
             }
 
             If (LEqual (GEFC, 0x06))
             {
-                Store (SBCB (), GXFC)
+                Store (SBCB (), GXFC) /* \_SB_.PCI0.GFX0.GXFC */
             }
 
-            Store (Zero, GEFC)
-            Store (One, CPSC)
-            Store (Zero, GSSE)
-            Store (Zero, SCIE)
+            Store (Zero, GEFC) /* \_SB_.PCI0.GFX0.GEFC */
+            Store (One, CPSC) /* External reference */
+            Store (Zero, GSSE) /* \_SB_.PCI0.GFX0.GSSE */
+            Store (Zero, SCIE) /* \_SB_.PCI0.GFX0.SCIE */
             Return (Zero)
         }
 
@@ -2887,8 +2889,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                 Return (One)
             }
 
-            Store (Arg0, CEVT)
-            Store (0x03, CSTS)
+            Store (Arg0, CEVT) /* \_SB_.PCI0.GFX0.CEVT */
+            Store (0x03, CSTS) /* \_SB_.PCI0.GFX0.CSTS */
             If (LAnd (LEqual (CHPD, Zero), LEqual (Arg1, Zero)))
             {
                 Notify (\_SB.PCI0.GFX0, Arg1)
@@ -2900,7 +2902,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
             }
             Else
             {
-                Notify (\_SB.PCI0.GFX0, 0x80)
+                Notify (\_SB.PCI0.GFX0, 0x80) // Status Change
             }
 
             Return (Zero)
@@ -2908,7 +2910,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 
         Method (GHDS, 1, NotSerialized)
         {
-            Store (Arg0, TIDX)
+            Store (Arg0, TIDX) /* \_SB_.PCI0.GFX0.TIDX */
             Return (GNOT (One, Zero))
         }
 
@@ -2916,16 +2918,16 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
         {
             If (LEqual (Arg0, One))
             {
-                Store (0x03, CLID)
+                Store (0x03, CLID) /* \_SB_.PCI0.GFX0.CLID */
             }
             Else
             {
-                Store (Arg0, CLID)
+                Store (Arg0, CLID) /* \_SB_.PCI0.GFX0.CLID */
             }
 
             If (GNOT (0x02, Zero))
             {
-                Or (CLID, 0x80000000, CLID)
+                Or (CLID, 0x80000000, CLID) /* \_SB_.PCI0.GFX0.CLID */
                 Return (One)
             }
 
@@ -2934,7 +2936,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 
         Method (GDCK, 1, NotSerialized)
         {
-            Store (Arg0, CDCK)
+            Store (Arg0, CDCK) /* \_SB_.PCI0.GFX0.CDCK */
             Return (GNOT (0x04, Zero))
         }
 
@@ -2950,8 +2952,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 
         Method (IUEH, 1, Serialized)
         {
-            And (IUER, 0xC0, IUER)
-            XOr (IUER, ShiftLeft (One, Arg0), IUER)
+            And (IUER, 0xC0, IUER) /* \_SB_.PCI0.GFX0.IUER */
+            XOr (IUER, ShiftLeft (One, Arg0), IUER) /* \_SB_.PCI0.GFX0.IUER */
             If (LLessEqual (Arg0, 0x04))
             {
                 Return (AINT (0x05, Zero))
@@ -2976,8 +2978,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 
             If (LAnd (LGreaterEqual (Arg0, 0x05), LLessEqual (Arg0, 0x07)))
             {
-                Store (ShiftLeft (One, Arg0), ASLC)
-                Store (One, ASLE)
+                Store (ShiftLeft (One, Arg0), ASLC) /* \_SB_.PCI0.GFX0.ASLC */
+                Store (One, ASLE) /* \_SB_.PCI0.GFX0.ASLE */
                 Store (Zero, Local2)
                 While (LAnd (LLess (Local2, 0xFA), LNotEqual (ASLC, Zero)))
                 {
@@ -2998,15 +3000,15 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     {
                         If (And (Local1, 0x06))
                         {
-                            Store (0x06, PFIT)
+                            Store (0x06, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         ElseIf (And (Local1, 0x08))
                         {
-                            Store (0x08, PFIT)
+                            Store (0x08, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         Else
                         {
-                            Store (One, PFIT)
+                            Store (One, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                     }
 
@@ -3014,15 +3016,15 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     {
                         If (And (Local1, 0x08))
                         {
-                            Store (0x08, PFIT)
+                            Store (0x08, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         ElseIf (And (Local1, One))
                         {
-                            Store (One, PFIT)
+                            Store (One, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         Else
                         {
-                            Store (0x06, PFIT)
+                            Store (0x06, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                     }
 
@@ -3030,49 +3032,49 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                     {
                         If (And (Local1, One))
                         {
-                            Store (One, PFIT)
+                            Store (One, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         ElseIf (And (Local1, 0x06))
                         {
-                            Store (0x06, PFIT)
+                            Store (0x06, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                         Else
                         {
-                            Store (0x08, PFIT)
+                            Store (0x08, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                         }
                     }
                 }
                 Else
                 {
-                    XOr (PFIT, 0x07, PFIT)
+                    XOr (PFIT, 0x07, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
                 }
 
-                Or (PFIT, 0x80000000, PFIT)
-                Store (0x04, ASLC)
+                Or (PFIT, 0x80000000, PFIT) /* \_SB_.PCI0.GFX0.PFIT */
+                Store (0x04, ASLC) /* \_SB_.PCI0.GFX0.ASLC */
             }
             ElseIf (LEqual (Arg0, One))
             {
-                Store (Divide (Multiply (Arg1, 0xFF), 0x64, ), BCLP)
-                Or (BCLP, 0x80000000, BCLP)
-                Store (0x02, ASLC)
+                Store (Divide (Multiply (Arg1, 0xFF), 0x64, ), BCLP) /* \_SB_.PCI0.GFX0.BCLP */
+                Or (BCLP, 0x80000000, BCLP) /* \_SB_.PCI0.GFX0.BCLP */
+                Store (0x02, ASLC) /* \_SB_.PCI0.GFX0.ASLC */
             }
             ElseIf (LEqual (Arg0, Zero))
             {
-                Store (Arg1, ALSI)
-                Store (One, ASLC)
+                Store (Arg1, ALSI) /* \_SB_.PCI0.GFX0.ALSI */
+                Store (One, ASLC) /* \_SB_.PCI0.GFX0.ASLC */
             }
             Else
             {
                 Return (One)
             }
 
-            Store (One, ASLE)
+            Store (One, ASLE) /* \_SB_.PCI0.GFX0.ASLE */
             Return (Zero)
         }
 
         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
         {
-            If (LEqual (Arg0, ToUUID ("3e5b41c6-eb1d-4260-9d15-c71fbadae414")))
+            If (LEqual (Arg0, ToUUID ("3e5b41c6-eb1d-4260-9d15-c71fbadae414") /* Unknown UUID */))
             {
                 Switch (ToInteger (Arg2))
                 {
@@ -3108,7 +3110,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                                 Store (CLID, Local0)
                                 If (And (0x80000000, Local0))
                                 {
-                                    And (CLID, 0x0F, CLID)
+                                    And (CLID, 0x0F, CLID) /* \_SB_.PCI0.GFX0.CLID */
                                     GLID (CLID)
                                 }
                             }
@@ -3161,7 +3163,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                         If (LEqual (Arg1, One))
                         {
                             Store ("SetBootDevicePreference ", Debug)
-                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IBTT)
+                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IBTT) /* \IBTT */
                             Return (One)
                         }
                     }
@@ -3170,14 +3172,14 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                         If (LEqual (Arg1, One))
                         {
                             Store ("SetPanelPreference ", Debug)
-                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IPSC)
+                            And (DerefOf (Index (Arg3, Zero)), 0xFF, IPSC) /* \IPSC */
                             If (And (DerefOf (Index (Arg3, One)), 0xFF))
                             {
-                                And (DerefOf (Index (Arg3, One)), 0xFF, IPAT)
+                                And (DerefOf (Index (Arg3, One)), 0xFF, IPAT) /* \IPAT */
                                 Decrement (IPAT)
                             }
 
-                            And (ShiftRight (DerefOf (Index (Arg3, 0x02)), 0x04), 0x07, IBIA)
+                            And (ShiftRight (DerefOf (Index (Arg3, 0x02)), 0x04), 0x07, IBIA) /* \IBIA */
                             Return (One)
                         }
                     }
@@ -3204,7 +3206,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                         If (LEqual (Arg1, One))
                         {
                             Store ("GetBootDisplayPreference ", Debug)
-                            Or (ShiftLeft (DerefOf (Index (Arg3, 0x03)), 0x18), ShiftLeft (DerefOf (Index (Arg3, 0x02)), 0x10), Local0)
+                            Or (ShiftLeft (DerefOf (Index (Arg3, 0x03)), 0x18), ShiftLeft (DerefOf (Index (
+                                Arg3, 0x02)), 0x10), Local0)
                             And (Local0, 0xEFFF0000, Local0)
                             And (Local0, ShiftLeft (DerefOf (Index (DBTB, IBTT)), 0x10), Local0)
                             Or (IBTT, Local0, Local0)
@@ -3235,7 +3238,8 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                             Or (Local0, ShiftLeft (GMFN, One), Local0)
                             Or (Local0, 0x1800, Local0)
                             Or (Local0, ShiftLeft (IDMS, 0x11), Local0)
-                            Or (ShiftLeft (DerefOf (Index (DerefOf (Index (CDCT, HVCO)), CDVL)), 0x15), Local0, Local0)
+                            Or (ShiftLeft (DerefOf (Index (DerefOf (Index (CDCT, HVCO)), CDVL)), 0x15
+                                ), Local0, Local0)
                             Return (Local0)
                         }
                     }
@@ -3251,7 +3255,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
                             })
                             Store (KSV0, Index (KSVP, Zero))
                             Store (KSV1, Index (KSVP, One))
-                            Return (KSVP)
+                            Return (KSVP) /* \_SB_.PCI0.GFX0._DSM.KSVP */
                         }
                     }
 
@@ -3260,7 +3264,7 @@ DefinitionBlock ("", "SSDT", 2, "QUANTA", "COMPUTER", 0x00003000)
 
             Return (Buffer (One)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
         }
     }
