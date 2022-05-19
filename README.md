@@ -11,7 +11,7 @@
 | Ethernet | Realtek PCIe GBE Family Controller |
 | Wi-Fi / Bluetooth | Qualcomm Atheros QCA6174a Wireless Network & Bluetooth |
 | TouchPad | Synaptics SMBus TouchPad (SYN105A) |
-| BIOS | Phoenix SecureCore UEFI BIOS (Version GP219) |
+| BIOS | Phoenix SecureCore UEFI BIOS (Version GP233) |
 
 ## 🍃 macOS & OpenCore Versions
 - macOS Monterey 12.4
