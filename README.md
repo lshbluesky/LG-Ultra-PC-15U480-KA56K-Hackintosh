@@ -14,8 +14,9 @@
 | BIOS | Phoenix SecureCore UEFI BIOS (Version GP233) |
 
 ## 🍃 macOS & OpenCore Versions
-- macOS Monterey 12.4
-- OpenCore r0.8.0
+- macOS Monterey 12.5
+- macOS Ventura 13 Beta
+- OpenCore r0.8.3
 
 ## ❄️ ACPI SSDT Hot Patches
 | No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
