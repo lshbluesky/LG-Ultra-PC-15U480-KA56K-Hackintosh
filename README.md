@@ -13,7 +13,11 @@
 | TouchPad | Synaptics SMBus TouchPad (SYN105A) |
 | BIOS | Phoenix SecureCore UEFI BIOS (Version GP233) |
 
-## 🍃 macOS & OpenCore Versions
+## 🍃 Supported macOS & OpenCore Versions
+- macOS High Sierra 10.13.x
+- macOS Mojave 10.14.x
+- macOS Catalina 10.15.x
+- macOS Big Sur 11.x
 - macOS Monterey 12.5
 - macOS Ventura 13 Beta
 - OpenCore r0.8.3
