@@ -1,39 +1,34 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-HBTN_STA.aml, Thu Feb 11 23:42:29 2021
+ * Disassembly of SSDT-HBTN_STA.aml, Tue Oct 18 13:53:18 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000000AE (174)
+ *     Length           0x00000073 (115)
  *     Revision         0x02
- *     Checksum         0x7C
+ *     Checksum         0x7B
  *     OEM ID           "shl"
  *     OEM Table ID     "HBTN_STA"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20180427 (538444839)
+ *     Compiler Version 0x20200925 (538970405)
  */
 DefinitionBlock ("", "SSDT", 2, "shl", "HBTN_STA", 0x00000000)
 {
-    External (_SB_.PCI0.LPCB.EC0_.HBTN, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.HBTN.XSTA, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.LPCB.EC0_.CUDD, FieldUnitObj)
 
-    Scope (\_SB.PCI0.LPCB.EC0.HBTN)
+    Scope (\)
     {
-        Method (_STA, 0, NotSerialized)  // _STA: Status
+        Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
             If (_OSI ("Darwin"))
             {
-                Return (Zero)
-            }
-            Else
-            {
-                Return (\_SB.PCI0.LPCB.EC0.HBTN.XSTA ())
+                \_SB.PCI0.LPCB.EC0.CUDD = Zero
             }
         }
     }

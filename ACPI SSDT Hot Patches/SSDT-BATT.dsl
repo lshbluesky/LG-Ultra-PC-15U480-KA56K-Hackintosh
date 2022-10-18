@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-BATT.aml, Thu Feb 11 23:42:29 2021
+ * Disassembly of SSDT-BATT.aml, Tue Oct 18 13:53:18 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,70 +20,70 @@
  */
 DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
 {
-    External (_SB_.BAT0, DeviceObj)    // (from opcode)
-    External (_SB_.BAT0.BTUR, IntObj)    // (from opcode)
-    External (_SB_.BAT0.PBIF, PkgObj)    // (from opcode)
-    External (_SB_.BAT0.PBST, PkgObj)    // (from opcode)
-    External (_SB_.BAT0.XPBI, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.BAT0.XPBS, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.BAT0.XVBI, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.FL06, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.QBCM, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.GFX0.QBQC, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.BACR, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.BERR, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.BLEX, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.BTLW, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.CBLW, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.DCBR, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.FPRP, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.HDMI, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.LOSD, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.MBST, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.MUTA, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.MUTS, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.NTEC, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.OWNR, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SLMO, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.STBT, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.STRF, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SW2S, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SWBT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SWRF, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.TDEN, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.UCSP, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.VOVA, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.FRED, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.GETB, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.GETW, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.MAR0, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.MAR1, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.MAR2, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.OSDP, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.OWSP, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.SETB, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.SETD, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.SETW, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.XMAB, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.XMBB, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.Z00I, MethodObj)    // 3 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.Z00J, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.Z01E, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.POSW, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.SLPB, DeviceObj)    // (from opcode)
-    External (CMSR, MethodObj)    // 1 Arguments (from opcode)
-    External (CMSW, MethodObj)    // 2 Arguments (from opcode)
-    External (ECMS, FieldUnitObj)    // (from opcode)
-    External (ECOK, IntObj)    // (from opcode)
-    External (ECOM, FieldUnitObj)    // (from opcode)
-    External (ECON, FieldUnitObj)    // (from opcode)
-    External (IGDS, FieldUnitObj)    // (from opcode)
-    External (MUTX, MutexObj)    // (from opcode)
-    External (OSYS, FieldUnitObj)    // (from opcode)
-    External (QSMI, MethodObj)    // 5 Arguments (from opcode)
+    External (_SB_.BAT0, DeviceObj)
+    External (_SB_.BAT0.BTUR, IntObj)
+    External (_SB_.BAT0.PBIF, PkgObj)
+    External (_SB_.BAT0.PBST, PkgObj)
+    External (_SB_.BAT0.XPBI, MethodObj)    // 0 Arguments
+    External (_SB_.BAT0.XPBS, MethodObj)    // 0 Arguments
+    External (_SB_.BAT0.XVBI, MethodObj)    // 0 Arguments
+    External (_SB_.FL06, FieldUnitObj)
+    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)
+    External (_SB_.PCI0.GFX0.QBCM, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.GFX0.QBQC, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.LPCB.EC0_, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC0_.BACR, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.BERR, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.BLEX, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.BTLW, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.CBLW, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.DCBR, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.FPRP, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.HDMI, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.LOSD, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.MBST, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.MUTA, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.MUTS, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.NTEC, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.OWNR, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.SLMO, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.STBT, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.STRF, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.SW2S, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.SWBT, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.SWRF, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.TDEN, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.UCSP, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.VOVA, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.MAP1, DeviceObj)
+    External (_SB_.PCI0.LPCB.MAP1.FRED, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.GETB, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.GETW, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.MAR0, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.MAR1, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.MAR2, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.OSDP, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.OWSP, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.SETB, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.SETD, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.SETW, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.XMAB, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.XMBB, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.Z00I, MethodObj)    // 3 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.Z00J, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.MAP1.Z01E, MethodObj)    // 2 Arguments
+    External (_SB_.POSW, MethodObj)    // 1 Arguments
+    External (_SB_.SLPB, DeviceObj)
+    External (CMSR, MethodObj)    // 1 Arguments
+    External (CMSW, MethodObj)    // 2 Arguments
+    External (ECMS, FieldUnitObj)
+    External (ECOK, IntObj)
+    External (ECOM, FieldUnitObj)
+    External (ECON, FieldUnitObj)
+    External (IGDS, FieldUnitObj)
+    External (MUTX, MutexObj)
+    External (OSYS, FieldUnitObj)
+    External (QSMI, MethodObj)    // 5 Arguments
 
     If (_OSI ("Darwin"))
     {
@@ -186,7 +186,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
 
                     If ((\_SB.PCI0.LPCB.MAP1.MAR0 == 0x02))
                     {
-                        Return (ECOK)
+                        Return (ECOK) /* External reference */
                     }
 
                     If ((\_SB.PCI0.LPCB.MAP1.MAR0 == 0x03))
@@ -344,11 +344,11 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                     {
                         If ((MAR1 == One))
                         {
-                            Return (\_SB.PCI0.LPCB.MAP1.OWSP)
+                            Return (\_SB.PCI0.LPCB.MAP1.OWSP) /* External reference */
                         }
                         ElseIf ((MAR1 == 0x02))
                         {
-                            \_SB.PCI0.LPCB.MAP1.OWSP = \_SB.PCI0.LPCB.MAP1.MAR2
+                            \_SB.PCI0.LPCB.MAP1.OWSP = \_SB.PCI0.LPCB.MAP1.MAR2 /* External reference */
                             Local0 = (\_SB.PCI0.LPCB.MAP1.MAR2 & 0x03)
                             ^^EC0.OWNR = Local0
                             Return (Zero)
@@ -362,7 +362,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                         If ((MAR1 == One))
                         {
                             Local0 = CMSR (0x69)
-                            Local2 = \_SB.FL06
+                            Local2 = \_SB.FL06 /* External reference */
                             Local2 &= One
                             If ((Local2 == One))
                             {
@@ -401,7 +401,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                             Local0 = (^^EC0.MUTS << 0x02)
                             Local1 = (^^EC0.LOSD << One)
                             Local2 = (Local0 | Local1)
-                            Local0 = (Local2 | ^^EC0.MUTA)
+                            Local0 = (Local2 | ^^EC0.MUTA) /* External reference */
                             Return (Local0)
                         }
                         ElseIf ((MAR1 == 0x02))
@@ -496,27 +496,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                         {
                                             Case (0x6A)
                                             {
-                                                Return (LD40)
+                                                Return (LD40) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD40 */
                                             }
                                             Case (0x6B)
                                             {
-                                                Return (LD41)
+                                                Return (LD41) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD41 */
                                             }
                                             Case (0x6C)
                                             {
-                                                Return (LD42)
+                                                Return (LD42) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD42 */
                                             }
                                             Case (0x6D)
                                             {
-                                                Return (LD40)
+                                                Return (LD40) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD40 */
                                             }
                                             Case (0x6E)
                                             {
-                                                Return (LD41)
+                                                Return (LD41) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD41 */
                                             }
                                             Case (0x6F)
                                             {
-                                                Return (LD42)
+                                                Return (LD42) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD42 */
                                             }
 
                                         }
@@ -527,27 +527,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                         {
                                             Case (0x6A)
                                             {
-                                                Return (LD20)
+                                                Return (LD20) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD20 */
                                             }
                                             Case (0x6B)
                                             {
-                                                Return (LD21)
+                                                Return (LD21) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD21 */
                                             }
                                             Case (0x6C)
                                             {
-                                                Return (LD22)
+                                                Return (LD22) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD22 */
                                             }
                                             Case (0x6D)
                                             {
-                                                Return (LD20)
+                                                Return (LD20) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD20 */
                                             }
                                             Case (0x6E)
                                             {
-                                                Return (LD21)
+                                                Return (LD21) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD21 */
                                             }
                                             Case (0x6F)
                                             {
-                                                Return (LD22)
+                                                Return (LD22) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD22 */
                                             }
 
                                         }
@@ -561,27 +561,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                         {
                                             Case (0x6A)
                                             {
-                                                Return (LD60)
+                                                Return (LD60) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD60 */
                                             }
                                             Case (0x6B)
                                             {
-                                                Return (LD61)
+                                                Return (LD61) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD61 */
                                             }
                                             Case (0x6C)
                                             {
-                                                Return (LD62)
+                                                Return (LD62) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD62 */
                                             }
                                             Case (0x6D)
                                             {
-                                                Return (LD60)
+                                                Return (LD60) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD60 */
                                             }
                                             Case (0x6E)
                                             {
-                                                Return (LD61)
+                                                Return (LD61) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD61 */
                                             }
                                             Case (0x6F)
                                             {
-                                                Return (LD62)
+                                                Return (LD62) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD62 */
                                             }
 
                                         }
@@ -592,27 +592,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                         {
                                             Case (0x6A)
                                             {
-                                                Return (LD30)
+                                                Return (LD30) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD30 */
                                             }
                                             Case (0x6B)
                                             {
-                                                Return (LD31)
+                                                Return (LD31) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD31 */
                                             }
                                             Case (0x6C)
                                             {
-                                                Return (LD32)
+                                                Return (LD32) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD32 */
                                             }
                                             Case (0x6D)
                                             {
-                                                Return (LD30)
+                                                Return (LD30) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD30 */
                                             }
                                             Case (0x6E)
                                             {
-                                                Return (LD31)
+                                                Return (LD31) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD31 */
                                             }
                                             Case (0x6F)
                                             {
-                                                Return (LD32)
+                                                Return (LD32) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD32 */
                                             }
 
                                         }
@@ -624,27 +624,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                     {
                                         Case (0x6A)
                                         {
-                                            Return (LD40)
+                                            Return (LD40) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD40 */
                                         }
                                         Case (0x6B)
                                         {
-                                            Return (LD41)
+                                            Return (LD41) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD41 */
                                         }
                                         Case (0x6C)
                                         {
-                                            Return (LD42)
+                                            Return (LD42) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD42 */
                                         }
                                         Case (0x6D)
                                         {
-                                            Return (LD40)
+                                            Return (LD40) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD40 */
                                         }
                                         Case (0x6E)
                                         {
-                                            Return (LD41)
+                                            Return (LD41) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD41 */
                                         }
                                         Case (0x6F)
                                         {
-                                            Return (LD42)
+                                            Return (LD42) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD42 */
                                         }
 
                                     }
@@ -655,27 +655,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                     {
                                         Case (0x6A)
                                         {
-                                            Return (LD10)
+                                            Return (LD10) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD10 */
                                         }
                                         Case (0x6B)
                                         {
-                                            Return (LD11)
+                                            Return (LD11) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD11 */
                                         }
                                         Case (0x6C)
                                         {
-                                            Return (LD12)
+                                            Return (LD12) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD12 */
                                         }
                                         Case (0x6D)
                                         {
-                                            Return (LD10)
+                                            Return (LD10) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD10 */
                                         }
                                         Case (0x6E)
                                         {
-                                            Return (LD11)
+                                            Return (LD11) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD11 */
                                         }
                                         Case (0x6F)
                                         {
-                                            Return (LD12)
+                                            Return (LD12) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD12 */
                                         }
 
                                     }
@@ -686,27 +686,27 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                                     {
                                         Case (0x6A)
                                         {
-                                            Return (LD10)
+                                            Return (LD10) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD10 */
                                         }
                                         Case (0x6B)
                                         {
-                                            Return (LD11)
+                                            Return (LD11) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD11 */
                                         }
                                         Case (0x6C)
                                         {
-                                            Return (LD12)
+                                            Return (LD12) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD12 */
                                         }
                                         Case (0x6D)
                                         {
-                                            Return (LD10)
+                                            Return (LD10) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD10 */
                                         }
                                         Case (0x6E)
                                         {
-                                            Return (LD11)
+                                            Return (LD11) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD11 */
                                         }
                                         Case (0x6F)
                                         {
-                                            Return (LD12)
+                                            Return (LD12) /* \_SB_.PCI0.LPCB.MAP1.WMAB.LD12 */
                                         }
 
                                     }
@@ -723,7 +723,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
 
                     If ((\_SB.PCI0.LPCB.MAP1.MAR0 == One))
                     {
-                        Return (ECOK)
+                        Return (ECOK) /* External reference */
                     }
 
                     If ((\_SB.PCI0.LPCB.MAP1.MAR0 == 0x67))
@@ -791,11 +791,11 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                     {
                         If ((MAR1 == One))
                         {
-                            Return (\_SB.PCI0.LPCB.MAP1.OSDP)
+                            Return (\_SB.PCI0.LPCB.MAP1.OSDP) /* External reference */
                         }
                         ElseIf ((MAR1 == 0x02))
                         {
-                            \_SB.PCI0.LPCB.MAP1.OSDP = \_SB.PCI0.LPCB.MAP1.MAR2
+                            \_SB.PCI0.LPCB.MAP1.OSDP = \_SB.PCI0.LPCB.MAP1.MAR2 /* External reference */
                             Return (Zero)
                         }
 
@@ -806,24 +806,24 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                     {
                         If ((MAR1 == One))
                         {
-                            Return (\_SB.PCI0.LPCB.MAP1.FRED)
+                            Return (\_SB.PCI0.LPCB.MAP1.FRED) /* External reference */
                         }
                         ElseIf ((MAR1 == 0x02))
                         {
-                            \_SB.PCI0.LPCB.MAP1.FRED = \_SB.PCI0.LPCB.MAP1.MAR2
+                            \_SB.PCI0.LPCB.MAP1.FRED = \_SB.PCI0.LPCB.MAP1.MAR2 /* External reference */
                             If ((\_SB.PCI0.LPCB.MAP1.MAR2 == 0x185455AA))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
 
                             If ((\_SB.PCI0.LPCB.MAP1.MAR2 == 0x09000086))
                             {
-                                Notify (^^^GFX0.DD1F, 0x86)
+                                Notify (^^^GFX0.DD1F, 0x86) // Device-Specific
                             }
 
                             If ((\_SB.PCI0.LPCB.MAP1.MAR2 == 0x09000087))
                             {
-                                Notify (^^^GFX0.DD1F, 0x87)
+                                Notify (^^^GFX0.DD1F, 0x87) // Device-Specific
                             }
 
                             Return (Zero)
@@ -839,7 +839,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                 {
                     If ((MAR1 == One))
                     {
-                        Local0 = ^^EC0.HDMI
+                        Local0 = ^^EC0.HDMI /* External reference */
                         Return (Local0)
                     }
 
@@ -855,7 +855,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
 
                     If ((MAR1 == One))
                     {
-                        Return (ECOM)
+                        Return (ECOM) /* External reference */
                     }
                     ElseIf ((MAR1 == 0x02))
                     {
@@ -1157,8 +1157,8 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                 }
                 ElseIf ((BTUR == One))
                 {
-                    Notify (BAT0, 0x81)
-                    Notify (BAT0, 0x80)
+                    Notify (BAT0, 0x81) // Information Change
+                    Notify (BAT0, 0x80) // Status Change
                     BTUR = Zero
                 }
 
@@ -1180,7 +1180,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "Battery", 0x00000000)
                 }
 
                 PBST [0x03] = B1B2 (^^PCI0.LPCB.EC0.BCV0, ^^PCI0.LPCB.EC0.BCV1)
-                PBST [Zero] = ^^PCI0.LPCB.EC0.MBST
+                PBST [Zero] = ^^PCI0.LPCB.EC0.MBST /* External reference */
             }
             Else
             {

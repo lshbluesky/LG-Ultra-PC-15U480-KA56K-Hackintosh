@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-FNBL.aml, Sat Feb 27 23:03:58 2021
+ * Disassembly of SSDT-FNBL.aml, Tue Oct 18 13:53:18 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,29 +20,29 @@
  */
 DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
 {
-    External (_SB_.FL07, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.HBTN, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.STBT, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.STRF, MethodObj)    // 2 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SWBT, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.SWRF, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.WHOK, FieldUnitObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.EC0_.XQ6E, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.CA82, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.CAUS, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.MAP1.OSDP, IntObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP01, DeviceObj)    // (from opcode)
-    External (BTST, FieldUnitObj)    // (from opcode)
-    External (OSYS, FieldUnitObj)    // (from opcode)
-    External (WLST, FieldUnitObj)    // (from opcode)
+    External (_SB_.FL07, FieldUnitObj)
+    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC0_, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC0_.HBTN, DeviceObj)
+    External (_SB_.PCI0.LPCB.EC0_.STBT, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.STRF, MethodObj)    // 2 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.SWBT, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.SWRF, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.LPCB.EC0_.WHOK, FieldUnitObj)
+    External (_SB_.PCI0.LPCB.EC0_.XQ6E, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.LPCB.MAP1, DeviceObj)
+    External (_SB_.PCI0.LPCB.MAP1.CA82, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.CAUS, IntObj)
+    External (_SB_.PCI0.LPCB.MAP1.OSDP, IntObj)
+    External (_SB_.PCI0.LPCB.PS2K, DeviceObj)
+    External (_SB_.PCI0.RP01, DeviceObj)
+    External (BTST, FieldUnitObj)
+    External (OSYS, FieldUnitObj)
+    External (WLST, FieldUnitObj)
 
     Scope (\_SB.PCI0.LPCB.EC0)
     {
-        Method (_Q6E, 0, Serialized)  // _Qxx: EC Query
+        Method (_Q6E, 0, Serialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
             {
@@ -97,7 +97,7 @@ DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
                         Local0 = 0x0136
                         If ((OSYS >= 0x07DC))
                         {
-                            Notify (HBTN, 0x80)
+                            Notify (HBTN, 0x80) // Status Change
                             Return (Zero)
                         }
                         Else
@@ -124,36 +124,36 @@ DefinitionBlock ("", "SSDT", 2, "shl", "BrightFn", 0x00000000)
                             }
 
                             Sleep (0x32)
-                            Notify (RP01, One)
+                            Notify (RP01, One) // Device Check
                         }
                     }
                     Case (0x33)
                     {
                         Notify (PS2K, 0x0405)
-                        Notify (^^^GFX0.DD1F, 0x87)
+                        Notify (^^^GFX0.DD1F, 0x87) // Device-Specific
                         If ((^^MAP1.OSDP & One))
                         {
                             Sleep (0x0A)
                             ^^MAP1.CA82 = 0x09000087
-                            Notify (MAP1, 0x82)
+                            Notify (MAP1, 0x82) // Device-Specific Change
                         }
                     }
                     Case (0x34)
                     {
                         Notify (PS2K, 0x0406)
-                        Notify (^^^GFX0.DD1F, 0x86)
+                        Notify (^^^GFX0.DD1F, 0x86) // Device-Specific
                         If ((^^MAP1.OSDP & One))
                         {
                             Sleep (0x0A)
                             ^^MAP1.CA82 = 0x09000086
-                            Notify (MAP1, 0x82)
+                            Notify (MAP1, 0x82) // Device-Specific Change
                         }
                     }
 
                 }
 
                 ^^MAP1.CAUS = Local0
-                Notify (MAP1, 0x80)
+                Notify (MAP1, 0x80) // Status Change
             }
             Else
             {

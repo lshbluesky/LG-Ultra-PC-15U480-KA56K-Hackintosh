@@ -1,11 +1,11 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-PLUG.aml, Thu Feb 11 23:42:29 2021
+ * Disassembly of SSDT-PLUG.aml, Tue Oct 18 13:53:18 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -20,7 +20,7 @@
  */
 DefinitionBlock ("", "SSDT", 2, "XCPM", "CpuPlug", 0x00003000)
 {
-    External (_PR_.PR00, ProcessorObj)    // (from opcode)
+    External (_PR_.PR00, ProcessorObj)
 
     Scope (\_PR.PR00)
     {
@@ -32,7 +32,7 @@ DefinitionBlock ("", "SSDT", 2, "XCPM", "CpuPlug", 0x00003000)
                 {
                     Return (Buffer (One)
                     {
-                         0x03                                           
+                         0x03                                             // .
                     })
                 }
 
