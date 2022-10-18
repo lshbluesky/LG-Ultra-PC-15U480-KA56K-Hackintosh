@@ -30,17 +30,15 @@
 | 3 | SSDT-DMAC.aml | X | Injection | X |
 | 4 | SSDT-EC-USBX.aml | X | Injection | X |
 | 5 | SSDT-FNBL.aml | O | Hot Patch & Override | O |
-| 6 | SSDT-HBTN_STA.aml | O | Hot Patch & Override | O |
+| 6 | SSDT-HBTN_STA.aml | X | Preset Variable Method | O |
 | 7 | SSDT-HPET.aml | X | Preset Variable Method | O |
-| 8 | SSDT-MATHLDR2_STA.aml | O | Hot Patch & Override | O |
-| 9 | SSDT-MCHC.aml | X | Injection | X |
-| 10 | SSDT-MEM2.aml | X | Injection | X |
-| 11 | SSDT-NVOF.aml | X | Injection | X |
-| 12 | SSDT-OSYS.aml | X | Assign & Injection | O |
-| 13 | SSDT-PLUG.aml | X | Injection | X |
-| 14 | SSDT-PMCR.aml | X | Injection | X |
-| 15 | SSDT-PNLF.aml | X | Injection | X |
-| 16 | SSDT-RP12_STA.aml | X | Injection | X |
+| 8 | SSDT-MCHC.aml | X | Injection | X |
+| 9 | SSDT-MEM2.aml | X | Injection | X |
+| 10 | SSDT-NVOF.aml | X | Injection | X |
+| 11 | SSDT-OSYS.aml | X | Assign & Injection | O |
+| 12 | SSDT-PLUG.aml | X | Injection | X |
+| 13 | SSDT-PNLF.aml | X | Injection | X |
+| 14 | SSDT-RP12_STA.aml | X | Injection | X |
 
 ## 🍁 BIOS Settings
 - Advanced

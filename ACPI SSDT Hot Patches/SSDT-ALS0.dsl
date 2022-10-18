@@ -1,30 +1,30 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of SSDT-ALS0.aml, Thu Feb 11 23:42:29 2021
+ * Disassembly of SSDT-ALS0.aml, Tue Oct 18 13:53:18 2022
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000085 (133)
+ *     Length           0x00000084 (132)
  *     Revision         0x02
- *     Checksum         0x95
+ *     Checksum         0xDA
  *     OEM ID           "ACDT"
  *     OEM Table ID     "ALS0"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20180427 (538444839)
+ *     Compiler Version 0x20200528 (538969384)
  */
 DefinitionBlock ("", "SSDT", 2, "ACDT", "ALS0", 0x00000000)
 {
-    Scope (\_SB)
+    Scope (_SB)
     {
         Device (ALS0)
         {
-            Name (_HID, "ACPI0008")  // _HID: Hardware ID
+            Name (_HID, "ACPI0008" /* Ambient Light Sensor Device */)  // _HID: Hardware ID
             Name (_CID, "smc-als")  // _CID: Compatible ID
             Name (_ALI, 0x012C)  // _ALI: Ambient Light Illuminance
             Name (_ALR, Package (0x01)  // _ALR: Ambient Light Response
