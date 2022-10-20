@@ -57,23 +57,25 @@
   - WLAN slot is disabled by SSDT-RP12_STA.aml
 
 ## ✅ Working
-- Intel UHD Graphics 620 QE/CI
-- Intel UHD Graphics 620 AGPM
-- Intel UHD Graphics 620 External HDMI Display Output
-- Realtek ALC 255
-- Speed Step & Power Management (Speed Shift + XCPM)
-- Realtek Wired Network
-- USB 3.0
-- USB HD Webcam
-- Night Shift
-- Battery Health Management
-- Battery Percentage Indication
-- Synaptics SMBus TouchPad
-- Brightness Control
-- Fn Keys (Brightness & Sound Volume Control)
-- Realtek RTS522A PCI Express Card Reader
-- Sleep & Wake
-- Sleep by Closing Lid
+- [X] Intel UHD Graphics 620 QE/CI
+- [X] Intel UHD Graphics 620 AGPM
+- [X] Intel UHD Graphics 620 External HDMI Display Output
+- [X] Realtek ALC 255
+- [X] Speed Step & Power Management (Speed Shift + XCPM)
+- [X] Realtek Wired Network
+- [X] USB 3.0
+- [X] USB HD Webcam
+- [X] Night Shift
+- [X] Battery Health Management
+- [X] Battery Percentage Indication
+- [X] Synaptics SMBus TouchPad
+- [X] Brightness Control
+- [X] Fn Keys (Brightness & Sound Volume Control)
+- [X] Realtek RTS522A PCI Express Card Reader
+- [X] iCloud & App Store
+- [X] iMessage & FaceTime
+- [X] Sleep & Wake
+- [X] Sleep by Closing Lid
 
 ## ❌ Not Working
-- Qualcomm Atheros QCA6174a Wireless Network & Bluetooth
+- [ ] Qualcomm Atheros QCA6174a Wireless Network & Bluetooth
