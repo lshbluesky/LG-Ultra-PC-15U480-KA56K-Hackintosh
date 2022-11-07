@@ -18,7 +18,7 @@
 - macOS Mojave 10.14.x
 - macOS Catalina 10.15.x
 - macOS Big Sur 11.x
-- macOS Monterey 12.5
+- macOS Monterey 12.x
 - macOS Ventura 13.0
 - OpenCore r0.8.5
 
