@@ -66,7 +66,7 @@
 - [X] Speed Step & Power Management (Speed Shift + XCPM)
 - [X] Realtek Wired Network
 - [X] USB 3.0
-- [X] USB HD Webcam
+- [X] Integrated Webcam
 - [X] Night Shift
 - [X] Battery Health Management
 - [X] Battery Percentage Indication
