@@ -1,4 +1,4 @@
-# 🍭 LG-Ultra-PC-15U480-KA56K-Hackintosh 🍬
+# 🍭 LG Ultra PC 15U480-KA56K Hackintosh 🍬
 
 ![Screenshot](https://user-images.githubusercontent.com/61459016/201507810-9b8f0cef-00d3-4b53-b1fc-9b89c3850f53.png)
 
