@@ -2,6 +2,8 @@
 
 ![Screenshot](https://user-images.githubusercontent.com/61459016/201507810-9b8f0cef-00d3-4b53-b1fc-9b89c3850f53.png)
 
+![Sonoma](https://github.com/lshbluesky/LG-Ultra-PC-15U480-KA56K-Hackintosh/assets/61459016/a573638b-bb82-4bb4-bd43-1242e1332526)
+
 ## 🌿 System Specification
 | Name | Description |
 | - | - |
@@ -22,7 +24,13 @@
 - macOS Big Sur 11.x
 - macOS Monterey 12.x
 - macOS Ventura 13.x
+- macOS Sonoma 14 Beta
 - OpenCore r0.9.2
+
+## 🌾 macOS Sonoma 14.0 Beta
+1. Add the `-lilubetaall` boot arg to boot-args in NVRAM - Add in Config.plist
+2. Change SMBIOS to `MacBookPro15,2` model in Config.plist
+3. Modify SMBIOS to `MacBookPro15,2` model in Info.plist of USBMap.kext
 
 ## ❄️ ACPI SSDT Hot Patches
 | No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
