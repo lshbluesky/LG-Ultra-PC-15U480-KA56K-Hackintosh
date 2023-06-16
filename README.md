@@ -28,9 +28,8 @@
 - OpenCore r0.9.3
 
 ## 🌾 macOS Sonoma 14.0 Beta
-1. Add the `-lilubetaall` boot arg to boot-args in NVRAM - Add in Config.plist
-2. Change SMBIOS to `MacBookPro15,2` model in Config.plist
-3. Modify SMBIOS to `MacBookPro15,2` model in Info.plist of USBMap.kext
+1. Change SMBIOS to `MacBookPro15,2` model in Config.plist
+2. Modify SMBIOS to `MacBookPro15,2` model in Info.plist of USBMap.kext
 
 ## ❄️ ACPI SSDT Hot Patches
 | No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
@@ -52,15 +51,15 @@
 
 ## 🍁 BIOS Settings
 - Advanced
-  - USB BIOS Legacy Support : Enabled
-  - SATA Mode Selection : AHCI
-  - AC Mode Fan Always On : Enabled
-  - DC Mode Fan Always On : Enabled
+  - USB BIOS Legacy Support : `Enabled`
+  - SATA Mode Selection : `AHCI`
+  - AC Mode Fan Always On : `Enabled`
+  - DC Mode Fan Always On : `Enabled`
 - Security
   - Secure Boot Configuration
-    - Secure Boot Option : Disabled
+    - Secure Boot Option : `Disabled`
 - Boot
-  - Legacy Mode : Disabled
+  - Legacy Mode : `Disabled`
 
 ## ⚠️ Issues
 - Qualcomm Atheros QCA6174a Wireless Network and Bluetooth do not work.
