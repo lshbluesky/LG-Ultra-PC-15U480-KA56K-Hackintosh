@@ -1,8 +1,6 @@
 # 🍭 LG Ultra PC 15U480-KA56K Hackintosh 🍬
 
-![Screenshot](https://user-images.githubusercontent.com/61459016/201507810-9b8f0cef-00d3-4b53-b1fc-9b89c3850f53.png)
-
-![Sonoma](https://github.com/lshbluesky/LG-Ultra-PC-15U480-KA56K-Hackintosh/assets/61459016/a573638b-bb82-4bb4-bd43-1242e1332526)
+![Sonoma](https://github.com/lshbluesky/LG-Ultra-PC-15U480-KA56K-Hackintosh/assets/61459016/bf294b3e-d760-41db-a8e2-25b92417ce33)
 
 ## 🌿 System Specification
 | Name | Description |
