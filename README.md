@@ -5,8 +5,8 @@
 ## 🌿 System Specification
 | Name | Description |
 | - | - |
-| CPU | Intel 8th Gen Kaby Lake Refresh Core i5 - 8250U 3.40 GHz |
-| Chipsets | Intel Sunrise Point - LP |
+| CPU | Intel 8th Gen Kaby Lake Refresh Core i5-8250U 3.40 GHz |
+| Chipsets | Intel Sunrise Point-LP |
 | Graphics | Intel UHD Graphics 620 (NVidia GeForce MX150 is Disabled) |
 | Memory | DDR4 PC4-19200 2400 MHz 8GB |
 | Sound | Realtek HD Audio ALC 255 |
@@ -23,7 +23,7 @@
 - macOS Monterey 12.x
 - macOS Ventura 13.x
 - macOS Sonoma 14.x
-- OpenCore r0.9.7
+- OpenCore r0.9.8
 
 ## ❄️ ACPI SSDT Hot Patches
 | No. | SSDT Name | ACPI Rename Required | ACPI Patch Type | OEM DSDT Override |
